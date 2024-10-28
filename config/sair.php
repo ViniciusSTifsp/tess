@@ -1,6 +1,8 @@
 <?php
-    session_start();
-    unset($_SESSION['email']);
-    unset($_SESSION['senha']);
-    header("Location: ../view/login.php");
+    require_once('../controllers/UsuarioController.php');
+
+    $usuarioController = new UsuarioController();
+    $usuarioController->logout();
+
+    header("Location: ../view/index.php");
 ?>

@@ -6,7 +6,7 @@ class Usuario {
     private $email;
     private $senha;
 
-    function __construct($nome, $email, $senha) {
+    function __construct($nome = null, $email = null, $senha = null) {
         $this->nome = $nome;
         $this->email = $email;
         $this->senha = password_hash($senha, PASSWORD_DEFAULT);

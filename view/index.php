@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>TESS</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="../src/style/style.css" />
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
-    <link rel="shortcut icon" HREF="../images//luneta_transparente.ico">
+    <link rel="shortcut icon" HREF="../src/images//luneta_transparente.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
@@ -21,7 +21,7 @@
         <!--cabeçalho-->
         <header>
             <a href="#" class="logo">
-                <img src="../images/logo mapa 3 transparente.png" alt="" />
+                <img src="../src/images/logo mapa 3 transparente.png" alt="" />
             </a>
             <h2>TESS</h2>
             <nav>
@@ -52,7 +52,7 @@
             </div>
 
             <div class="home-img">
-                <img src="../images/masco_colorido2_adobe_express.png" alt="" />
+                <img src="../src/images/masco_colorido2_adobe_express.png" alt="" />
             </div>
         </section>
 
@@ -64,7 +64,7 @@
         <section class="container">
             <div class="container-box">
                 <div class="container-imagem">
-                    <img src="../images/gramatica.png" />
+                    <img src="../src/images/gramatica.png" />
                 </div>
                 <div class="container-texto">
                     <h4>Gramática</h4>
@@ -74,7 +74,7 @@
 
             <div class="container-box">
                 <div class="container-imagem">
-                    <img src="../images/audicao.png" />
+                    <img src="../src/images/audicao.png" />
                 </div>
                 <div class="container-texto">
                     <h4>Audição</h4>
@@ -84,7 +84,7 @@
 
             <div class="container-box">
                 <div class="container-imagem">
-                    <img src="../images/leitura.png" />
+                    <img src="../src/images/leitura.png" />
                 </div>
                 <div class="container-texto">
                     <h4>Leitura</h4>
@@ -94,7 +94,7 @@
 
             <div class="container-box">
                 <div class="container-imagem">
-                    <img src="../images/escrita.png" />
+                    <img src="../src/images/escrita.png" />
                 </div>
                 <div class="container-texto">
                     <h4>Escrita</h4>
@@ -112,22 +112,22 @@
 
             <div class="trilhas-conteudo">
                 <div class="caixa2">
-                    <img src="../images/pipoca.png" alt="" />
+                    <img src="../src/images/pipoca.png" alt="" />
                     <h3>Aprendizado com Jogos</h3>
                 </div>
 
                 <div class="caixa2">
-                    <img src="../images/karaoke.png" alt="" />
+                    <img src="../src/images/karaoke.png" alt="" />
                     <h3>Aprendizado com Jogos</h3>
                 </div>
 
                 <div class="caixa2">
-                    <img src="../images/controle-de-video-game.png" alt="" />
+                    <img src="../src/images/controle-de-video-game.png" alt="" />
                     <h3>Aprendizado com Jogos</h3>
                 </div>
 
                 <div class="caixa2">
-                    <img src="../images/publicidade.png" alt="" />
+                    <img src="../src/images/publicidade.png" alt="" />
                     <h3>Aprendizado com Jogos</h3>
                 </div>
             </div>
@@ -141,7 +141,7 @@
             </div>
             <div class="cursos-conteudo">
                 <div class="caixa">
-                    <img src="../images/curso1.jpg" />
+                    <img src="../src/images/curso1.jpg" />
                     <div class="cursos-texto">
                         <h5>Trilha 1</h5>
                         <h3>Trilha Pop</h3>
@@ -149,7 +149,7 @@
                     </div>
                 </div>
                 <div class="caixa">
-                    <img src="../images/curso2.jpg" />
+                    <img src="../src/images/curso2.jpg" />
                     <div class="cursos-texto">
                         <h5>Trilha 2</h5>
                         <h3>Trilha Geek</h3>
@@ -157,7 +157,7 @@
                     </div>
                 </div>
                 <div class="caixa">
-                    <img src="../images/curso3.jpg" />
+                    <img src="../src/images/curso3.jpg" />
                     <div class="cursos-texto">
                         <h5>Trilha 3</h5>
                         <h3>Trilha Games</h3>
@@ -170,7 +170,7 @@
         <!--seção sobre-->
         <section class="sobre" id="sobre">
             <div class="sobre-img">
-                <img src="../images/sobre.png" />
+                <img src="../src/images/sobre.png" />
             </div>
             <div class="sobre-texto">
                 <h2>Sobre nós</h2>
@@ -190,7 +190,7 @@
         <section class="contato" id="contato">
             <div class="contato-principal">
                 <div class="contato-conteudo">
-                    <img src="../images/logo mapa 3 transparente.png" alt="" />
+                    <img src="../src/images/logo mapa 3 transparente.png" alt="" />
                     <li><a href="#">Facebook</a></li>
                     <li><a href="#">Instagram</a></li>
                 </div>
@@ -214,7 +214,7 @@
         </div>
 
         <!--javascript-->
-        <script type="text/javascript" src="../js/script.js"></script>
+        <script type="text/javascript" src="../src/js/script.js"></script>
     </main>
 </body>
 

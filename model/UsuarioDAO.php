@@ -17,4 +17,10 @@ class UsuarioDAO {
         return mysqli_query($con->connection(), $query);
     }
 
+    public function atualizaLogin(Connection $con) {
+        session_start();
+        $query = 'UPDATE usuarios SET login = "1" WHERE id = "'.$_SESSION['id'].'"';
+        return mysqli_query($con->connection(), $query);
+    }
+
 }
