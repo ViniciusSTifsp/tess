@@ -29,7 +29,7 @@
 
             <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background: #2E8098;">
                 <div class="featured-image mb-3">
-                    <img src="../images/mapa_transparente.png" class="img-fluid" style="width: 250px;">
+                    <img src="../src/images/mapa_transparente.png" class="img-fluid" style="width: 250px;">
                 </div>
                 <p class="text-white fs-2" style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">TESS</p>
                 <small class="text-white text-wrap text-center" style="width: 17rem;font-family: 'Courier New', Courier, monospace;">Realize seu cadastro e inicie seus estudos!</small>
@@ -39,7 +39,7 @@
 
             <div class="col-md-6 right-box">
                 <div class="row align-items-center ">
-                    <form action="../view/cadastro_handler.php" method="POST">
+                    <form action="../config/cadastro_handler.php" method="POST">
                         <div class="header-text mb-4">
                             <h2>Welcome</h2>
                             <p>Estamos felizes em te ver!.</p>
