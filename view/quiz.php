@@ -1,3 +1,8 @@
+<?php 
+    require_once('../controllers/QuizController.php');
+
+    $quizController = new QuizController();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -37,11 +42,7 @@
                 <div class="exercise-box">
 
                     <form action="../config/quiz_handler.php" method="POST">
-                        <?php
-                            require_once('../controllers/QuizController.php');
-                            $quizController = new QuizController();
-                            $quizController->geraQuiz();
-                        ?>
+                        <?= $quizController->geraQuiz(); ?>
                         <button type="submit" class="btn btn-primary btn-lg btn-block">Enviar!</button>
                     </form>
                 </div>
