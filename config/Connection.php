@@ -12,4 +12,9 @@ class Connection {
         return $con;
     }
 
+    public function initCURL() {
+        $ch = curl_init();
+        return $ch;
+    }
+
 }

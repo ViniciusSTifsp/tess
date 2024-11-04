@@ -1,6 +1,5 @@
 <?php 
     require_once('../controllers/QuizController.php');
-
     $quizController = new QuizController();
 ?>
 <!DOCTYPE html>

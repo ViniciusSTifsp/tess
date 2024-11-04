@@ -1,8 +1,6 @@
 <?php
-require_once ('../controllers/UsuarioNivelController.php');
 
-$usuarioNivelController = new UsuarioNivelController();
+require_once('../controllers/SpotifyController.php');
+$spotifyController = new SpotifyController();
 
-$teste = $usuarioNivelController->buscaUsuarioNivel();
-
-echo '<p>Parabéns '.$_SESSION['nome'].' seu nível é '.$teste->getNivel().'!</p>';
+$spotifyController->selecionaMusica();
