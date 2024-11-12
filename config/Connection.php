@@ -3,7 +3,7 @@
 class Connection {
     
     private $host = 'localhost';
-    private $username = 'root';
+    private $username = '3306';
     private $password = '';
     private $database = 'tess_oficial';
 
