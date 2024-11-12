@@ -4,7 +4,7 @@ class Connection {
     
     private $host = 'localhost';
     private $username = 'hostdeprojetos_tess';
-    private $password = 'tessifsp';
+    private $password = 'tess@ifsp';
     private $database = 'hostdeprojetos_tess';
 
     public function connection() {
