@@ -3,8 +3,8 @@
 class Connection {
     
     private $host = 'localhost';
-    private $username = '3306';
-    private $password = '';
+    private $username = 'hostdeprojetos_tess';
+    private $password = 'ifspgru@2022';
     private $database = 'hostdeprojetos_tess';
 
     public function connection() {
