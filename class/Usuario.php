@@ -21,7 +21,7 @@ class Usuario {
     }
 
     public function getSenha() {
-        return $this->senha;
+        return  str_replace("\'",'', $this->senha); ;
     }
 
     public function setNome ($nome) {

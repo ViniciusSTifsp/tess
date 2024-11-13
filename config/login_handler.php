@@ -2,12 +2,15 @@
 
     require_once('../controllers/UsuarioController.php');
 
-    if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha'])) {
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
+    if(isset($_POST['submit']) && !empty($_REQUEST['email']) && !empty($_REQUEST['senha'])) {
+        $email = $_REQUEST['email'];
+        $senha = $_REQUEST['senha'];
 
         $usuarioController = new UsuarioController();
         $usuarioController->login($email, $senha);
 
-    }
+    } else{
+        // header('Location: ../view/home.php');
+        header('Location: ../view/login.php?msg=Usuário ou senha incorretos.');
+     }
 ?>

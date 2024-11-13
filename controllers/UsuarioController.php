@@ -49,13 +49,15 @@ class UsuarioController {
                         header('Location: ../view/quiz.php');
                     }
                     else{
-                        header('Location: ../view/home.php');
+                       header('Location: ../view/home.php');
+                      // header('Location: ../view/login.php?msg=Usuário ou senha incorretos.');
                     }
                 }
             }
         }
         else {
-            header('Location: ../view/home.php');
+           header('Location: ../view/home.php');
+           //header('Location: ../view/login.php?msg=Usuário ou senha incorretos.');
         }
     }
 
