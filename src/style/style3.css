@@ -1,3 +1,7 @@
+
+*{
+    font-family: "Poppins", sans-serif;
+}
 ::after,
 ::before {
     box-sizing: border-box;
@@ -247,3 +251,20 @@ body {
     visibility: visible;
     transform: scale(1);
 }
+#titulo_semana{
+    text-align: left;
+    padding: 15px;
+}
+.theme_title{
+    color: #4b95c7;
+}
+  
+  .card {
+    transition: all 0.5s;
+    box-shadow: 0 0 5px 0 rgba(22, 22, 26, .25);
+  }
+  
+  .card:hover {
+    background-color: #4b95c7;
+    color: #fff;
+  }

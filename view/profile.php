@@ -29,21 +29,13 @@
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label for="nome" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="nome" placeholder="Digite seu nome">
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label for="sobrenome" class="form-label">Sobrenome</label>
-                    <input type="text" class="form-control" id="sobrenome" placeholder="Digite seu sobrenome">
+                    <input type="text" class="form-control" id="nome" placeholder="<?= $_SESSION['nome'] ?>">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label for="email" class="form-label">E-mail</label>
-                    <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail">
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label for="telefone" class="form-label">Telefone</label>
-                    <input type="tel" class="form-control" id="telefone" placeholder="(XX) XXXXX-XXXX">
+                    <input type="email" class="form-control" id="email" placeholder="<?= $_SESSION['email'] ?>">
                 </div>
             </div>
             <button type="submit" class="btn btn-success">Salvar alterações</button>

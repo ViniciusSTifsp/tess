@@ -17,26 +17,26 @@
             </li>
             <li class="sidebar-item">
                 <a href="#" class="sidebar-link">
-                    <i class="lni lni-agenda"></i>
-                    <span>Trilhas</span>
+                <i class="lni lni-pencil"></i>
+                    <span>Semana 1</span>
                 </a>
             </li>
             <li class="sidebar-item">
                 <a href="#" class="sidebar-link">
-                    <i class="lni lni-agenda"></i>
-                    <span>Task</span>
+                <i class="lni lni-pencil"></i>
+                    <span>Semana 2</span>
                 </a>
             </li>
             <li class="sidebar-item">
                 <a href="#" class="sidebar-link">
-                    <i class="lni lni-popup"></i>
-                    <span>Notification</span>
+                <i class="lni lni-pencil"></i>
+                    <span>Semana 3</span>
                 </a>
             </li>
             <li class="sidebar-item">
                 <a href="#" class="sidebar-link">
-                    <i class="lni lni-cog"></i>
-                    <span>Setting</span>
+                <i class="lni lni-pencil"></i>
+                    <span>Semana 4</span>
                 </a>
             </li>
         </ul>

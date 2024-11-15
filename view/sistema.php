@@ -15,7 +15,7 @@
     <link rel="shortcut icon" HREF="../src/images//luneta_transparente.ico">
     <title>TESS</title>
 </head>
-<?php include_once "../module/menu.php" ?>
+<?php include_once "../module/menu_admin.php" ?>
 
 </div>
 </div>
