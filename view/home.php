@@ -1,7 +1,19 @@
-<?php include "../includes/include_home.php" ?>
+<?php 
+    include "../includes/include_home.php";
+    require_once('../controllers/ConteudoController.php');
+    $conteudoController = new ConteudoController();
+    $semana = (isset($_REQUEST['semana']) ? $_REQUEST['semana'] : 1);
+    if (isset($_POST['dia'])) {
+        $conteudo = $conteudoController->conteudoModal($semana, $_POST['dia']);
+    }
+    else {
+        $conteudo = $conteudoController->conteudoModal($semana, 1);
+    }
+    
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
-
+ 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,79 +25,63 @@
     <link rel="shortcut icon" HREF="../src/images//luneta_transparente.ico">
     <title>TESS</title>
 </head>
-
+ 
 <body>
     <?php include_once "../module/menu.php" ?>
-
-    <h1 id="titulo_semana">Your <span class="theme_title">Week - </span></h1>
-
+ 
+    <h1 id="titulo_semana"><span class="theme_title">Week <?= $semana ?> </span></h1>
+ 
     <h1 id="titulo_semana">Your <span class="theme_title">Days</span></h1>
-    <div class="container">
-        <div class="row gy-4">
-            <div class="col-sm" onclick="abrirModal()">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">Dia 1</h5>
-                        <p class="card-text">Some quick example text to build make up the bulk of the card's content.
-                        </p>
-                    </div>
+    
+    <?= $conteudoController->geraCardsConteudo($semana) ?>
+ 
+    <!-- Modal -->
+    <div class="modal fade" id="modalGuia" tabindex="-1" aria-labelledby="modalGuiaLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalGuiaLabel"><?= $conteudo->getTitulo() ?></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="modalTexto">Conteúdo do guia aqui...</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                 </div>
             </div>
-
-            <div class="col-sm">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">Dia 2</h5>
-                        <p class="card-text">Some quick example text to build make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">Dia 3</h5>
-                        <p class="card-text">Some quick example text to make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">Dia 4</h5>
-                        <p class="card-text">Some quick example text to make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold">Dia 5</h5>
-                        <p class="card-text">Some quick example text to make up the bulk of the card's content.</p>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
+ 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Arquivo JS personalizado -->
+    <script src="../src/js/script2.js"></script>
+    <script>
+        function abrirModal(dia) {
+            // Atualizar o conteúdo do modal com o dia selecionado
+            postAjax(dia);
+            var textoGuia = "<?php echo $conteudo->getDescricao() ?>";
+            document.getElementById("modalTexto").innerText = textoGuia;
+ 
+            // Abrir o modal
+            var modal = new bootstrap.Modal(document.getElementById('modalGuia'));
+            modal.show();
+        }
 
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-
+        function postAjax(dia) {
+            $.ajax({
+                action: '../view/home.php',
+                type: 'POST',
+                data: {dia:dia},
+                success:function(data){
+                   alert("got response as "+"'"+dia+"'");
+                }
+            });
+        }
+    </script>
 </body>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- Arquivo JS personalizado -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-<script src="../src/js/script2.js"></script>
-</body>
-
+ 
 </html>

@@ -11,7 +11,7 @@ class Conteudo {
     private $descricao;
     private $concluido;
 
-    public function __construct($id, $id_nivel, $semana, $dia, $titulo, $descricao, $concluido) {
+    public function __construct($id = null, $id_nivel = null, $semana = null, $dia = null, $titulo = null, $descricao = null, $concluido = null) {
         
         $this->id = $id;
         $this->id_nivel = $id_nivel;
