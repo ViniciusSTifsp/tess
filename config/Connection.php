@@ -9,6 +9,7 @@ class Connection {
 
     public function connection() {
         $con = new mysqli($this->host, $this->username, $this->password, $this->database);
+        mysqli_set_charset($con, 'utf8');
         return $con;
     }
 
