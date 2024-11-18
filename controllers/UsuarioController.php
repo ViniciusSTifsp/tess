@@ -99,13 +99,11 @@ class UsuarioController {
         $usuarioDAO = new UsuarioDAO();
         $resultado = $usuarioDAO->update($conexao, $usuario);
 
-        var_dump($resultado);
-
         if($resultado) {
-            header('Location: ../view/profile');
+            header('Location: ../view/profile.php');
         }
         else {
-            header('Location: ../view/profile?msg=falha');
+            header('Location: ../view/profile.php?msg=falha');
         }
         
     }
