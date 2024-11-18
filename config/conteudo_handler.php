@@ -11,7 +11,7 @@
         $resultado = $conteudoController->conteudoModal($semana, $dia);
 
         if($resultado) {
-            echo "Teste".json_encode($resultado);
+            var_dump($resultado);
         }
         else {
             echo "Teste";
