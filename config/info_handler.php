@@ -6,9 +6,7 @@
         $sobrenome = $_REQUEST['sobrenome'];
         $telefone = $_REQUEST['telefone'];
         $email = $_REQUEST['email'];
-        $senha = $_REQUEST['senha'];
-        
 
         $usuarioController = new UsuarioController();
-        $usuarioController->cadastrar($nome, $sobrenome, $telefone, $email, $senha);
+        $usuarioController->atualizaCadastro($nome, $sobrenome, $telefone, $email);
     }

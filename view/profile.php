@@ -1,5 +1,11 @@
 <?php
-    include "../includes/include_home.php"
+    include "../includes/include_home.php";
+    require_once('../controllers/UsuarioController.php');
+    require_once('../class/Usuario.php');
+
+    $usuarioController = new UsuarioController();
+    $usuario = $usuarioController->info();
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -25,40 +31,83 @@
         </div>
         <hr>
         <h5>Dados Pessoais</h5>
-        <form id="dadosPessoaisForm">
+        <form action="../config/info_handler.php" method="POST">
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label for="nome" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="nome" placeholder="<?= $_SESSION['nome'] ?>">
+                    <input 
+                        type="text"
+                        class="form-control"
+                        id="nome"
+                        name="nome"
+                        placeholder="<?= $usuario->getNome() ? $usuario->getNome() : 'Nome' ?>"
+                        value="<?= $usuario->getNome() ? $usuario->getNome() : '' ?>"
+                    />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="sobrenome" class="form-label">Sobrenome</label>
+                    <input 
+                        type="sobrenome" 
+                        class="form-control" 
+                        id="sobrenome" 
+                        name="sobrenome" 
+                        placeholder="<?= $usuario->getSobrenome() ? $usuario->getSobrenome() : 'Sobrenome' ?>" 
+                        value="<?= $usuario->getSobrenome() ? $usuario->getSobrenome() : '' ?>"
+                    />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="telefone" class="form-label">Telefone</label>
+                    <input 
+                        type="tel" 
+                        class="form-control" 
+                        id="telefone" 
+                        name="telefone" 
+                        placeholder="<?= $usuario->getTelefone() ? $usuario->getTelefone() : 'Telefone'  ?>" 
+                        value="<?= $usuario->getTelefone() ? $usuario->getTelefone() : '' ?>"
+                        pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})"
+                    />
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label for="email" class="form-label">E-mail</label>
-                    <input type="email" class="form-control" id="email" placeholder="<?= $_SESSION['email'] ?>">
+                    <input 
+                        type="email" 
+                        class="form-control" 
+                        id="email" 
+                        name="email" 
+                        placeholder="<?= $usuario->getEmail() ? $usuario->getEmail() : 'E-mail' ?>" 
+                        value="<?= $usuario->getEmail() ? $usuario->getEmail() : '' ?>"
+                    />
                 </div>
             </div>
-            <button type="submit" class="btn btn-success">Salvar alterações</button>
+
+            <button type="submit" class="btn btn-success" name="submit">Salvar alterações</button>
         </form>
     </div>
 
     <!-- Seção de Alteração de Senha -->
     <div class="profile-section mt-4">
         <h5>Alterar Senha</h5>
-        <form id="senhaForm">
+        <?php echo '<p>'.((isset($_REQUEST['msg']) ? $_REQUEST['msg'] : "") ).'</p>' ?>
+        <form id="senhaForm" action="../config/senha_handler.php" method="POST">
             <div class="mb-3">
                 <label for="senhaAtual" class="form-label">Senha Atual</label>
-                <input type="password" class="form-control" id="senhaAtual" placeholder="Digite sua senha atual">
+                <input type="password" class="form-control" id="senhaAtual" name="senhaAtual" placeholder="Digite sua senha atual">
             </div>
             <div class="mb-3">
                 <label for="novaSenha" class="form-label">Nova Senha</label>
-                <input type="password" class="form-control" id="novaSenha" placeholder="Digite uma nova senha">
+                <input type="password" class="form-control" id="novaSenha" name="senha" placeholder="Digite uma nova senha">
             </div>
             <div class="mb-3">
                 <label for="confirmarSenha" class="form-label">Confirmar Senha</label>
-                <input type="password" class="form-control" id="confirmarSenha" placeholder="Confirme a nova senha">
+                <input type="password" class="form-control" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme a nova senha">
             </div>
-            <button type="submit" class="btn btn-primary">Alterar Senha</button>
+            <button type="submit" class="btn btn-primary" name="submit">Alterar Senha</button>
         </form>
     </div>
     </div>

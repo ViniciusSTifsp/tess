@@ -34,7 +34,7 @@ class ConteudoController {
                 $conteudo->setDia($dado_conteudo['dia']);
                 $conteudo->setTitulo($dado_conteudo['titulo']);
 
-                echo     '<div class="col-sm" onclick="abrirModal(\''.$conteudo->getDia().'\')">';
+                echo     '<div class="col-sm conteudo" data-id="'.$conteudo->getDia().'">';
                 echo         '<div class="card h-100">';
                 echo             '<div class="card-body">';
                 echo                 '<h5 class="card-title fw-bold">Dia '.$conteudo->getDia().'</h5>';
@@ -51,6 +51,9 @@ class ConteudoController {
     }
 
     public function conteudoModal($semana, $dia){
+
+        session_start();
+        
         $conexao = new Connection();
         $conteudo = new Conteudo(); 
         $usuarioNivelDAO = new UsuarioNivelDAO();
@@ -71,7 +74,16 @@ class ConteudoController {
         $conteudo->setDescricao($dado_conteudo['descricao']);
         $conteudo->setConcluido($dado_conteudo['concluido']);
 
-        return $conteudo;
+        $reflectionClass = new ReflectionClass(get_class($conteudo));
+        $array = array();
+        foreach ($reflectionClass->getProperties() as $property) {
+            $property->setAccessible(true);
+            $array[$property->getName()] = $property->getValue($conteudo);
+            $property->setAccessible(false);
+        }
+
+        return $array;
+
     }
 
 }

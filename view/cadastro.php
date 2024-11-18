@@ -48,6 +48,12 @@
                             <input type="text" class="form-control form-control-lg bg-light fs-6 inputUser" name="nome" placeholder="Nome" id="nome" required>
                         </div>
                         <div class="input-group mb-1">
+                            <input type="text" class="form-control form-control-lg bg-light fs-6 inputUser" name="sobrenome" placeholder="Sobrenome" id="sobrenome" required>
+                        </div>
+                        <div class="input-group mb-1">
+                            <input type="tel" class="form-control form-control-lg bg-light fs-6 inputUser" name="telefone" placeholder="Telefone" id="telefone" required>
+                        </div>
+                        <div class="input-group mb-1">
                             <input type="email" class="form-control form-control-lg bg-light fs-6 inputUser" name="email" placeholder="Email" id="email" required>
                         </div>
                         <div class="input-group mb-3">

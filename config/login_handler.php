@@ -9,7 +9,7 @@
         $usuarioController = new UsuarioController();
         $usuarioController->login($email, $senha);
 
-    } else{
+    } else {
         // header('Location: ../view/home.php');
         header('Location: ../view/login.php?msg=Usuário ou senha incorretos.');
      }

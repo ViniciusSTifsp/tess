@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30/10/2024 às 18:16
+-- Tempo de geração: 18/11/2024 às 03:06
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `tess_oficial`
 --
+CREATE DATABASE IF NOT EXISTS `tess_oficial` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `tess_oficial`;
 
 -- --------------------------------------------------------
 
@@ -36,6 +38,12 @@ CREATE TABLE `conteudo` (
   `descricao` varchar(10000) NOT NULL,
   `concluido` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- RELACIONAMENTOS PARA TABELAS `conteudo`:
+--   `id_nivel`
+--       `nivel` -> `id`
+--
 
 --
 -- Despejando dados para a tabela `conteudo`
@@ -104,7 +112,7 @@ INSERT INTO `conteudo` (`id`, `id_nivel`, `semana`, `dia`, `titulo`, `descricao`
 (62, 21, 4, 3, 'Passive voice', 'Passive Voice (Voz Passiva): Uso, Estrutura e Exemplos\nA Passive Voice (voz passiva) é uma forma de estrutura gramatical em inglês que é usada para destacar a ação em si ou quem a recebe, em vez de enfatizar quem realiza a ação. Na voz passiva, o foco está no objeto que sofre a ação, e não no sujeito que a realiza. A voz passiva é muito comum em textos formais, como notícias, relatórios e artigos científicos, onde o agente da ação pode ser irrelevante ou já conhecido.\n1. O Que é a Passive Voice?\nNa Active Voice (voz ativa), o sujeito da frase é quem realiza a ação do verbo, enquanto o objeto sofre a ação. Já na Passive Voice, o objeto da voz ativa torna-se o sujeito da frase, e a pessoa ou coisa que realiza a ação pode ser mencionada ou não, geralmente introduzida pela preposição by (por).\nActive Voice: The chef prepared the meal.\n(O chef preparou a refeição.)\nPassive Voice: The meal was prepared by the chef.\n(A refeição foi preparada pelo chef.)\nNa voz passiva, a ação (preparar a refeição) continua sendo o foco, mas agora destacamos a refeição em vez de o chef.\n2. Estrutura da Passive Voice\nA estrutura da voz passiva é formada pelo verbo to be no tempo adequado, seguido do past participle (particípio passado) do verbo principal.\nFórmula Básica:\nSubject + to be (conjugado) + past participle (particípio passado) + by (opcional) + agent (agente da ação)\nA forma do verbo to be depende do tempo verbal em que a frase está. Aqui estão alguns exemplos em diferentes tempos:\nPresent Simple:\nActive: She writes the report.\n(Ela escreve o relatório.)\nPassive: The report is written by her.\n(O relatório é escrito por ela.)\nPast Simple:\nActive: They built the house.\n(Eles construíram a casa.)\nPassive: The house was built by them.\n(A casa foi construída por eles.)\nPresent Continuous:\nActive: They are cleaning the room.\n(Eles estão limpando o quarto.)\nPassive: The room is being cleaned.\n(O quarto está sendo limpo.)\nPresent Perfect:\nActive: She has completed the project.\n(Ela completou o projeto.)\nPassive: The project has been completed.\n(O projeto foi completado.)\n3. Quando Usar a Passive Voice?\nA Passive Voice é útil em diversas situações, especialmente quando queremos focar na ação ou no resultado, e não em quem a realizou. Algumas situações comuns para usar a voz passiva incluem:\nQuando o agente é desconhecido:\nThe window was broken.\n(A janela foi quebrada.)\nNeste caso, não sabemos ou não é importante saber quem quebrou a janela.\nQuando o agente é óbvio ou irrelevante:\nThe cake was eaten.\n(O bolo foi comido.)\nO importante é que o bolo foi comido, e quem o fez não é relevante.\nEm linguagem formal e científica:\nThe experiment was conducted to test the hypothesis.\n(O experimento foi conduzido para testar a hipótese.)\nEm textos acadêmicos, o foco está no processo ou resultado, e não em quem realizou a ação.\nPara dar ênfase ao objeto:\nA new hospital is being built in the city.\n(Um novo hospital está sendo construído na cidade.)\nO foco está na construção do hospital, que é a informação importante para o contexto.\n4. Como Transformar Sentenças da Voz Ativa para a Voz Passiva\nPara transformar uma frase da voz ativa para a passiva, siga os seguintes passos:\nIdentifique o objeto na frase ativa, que se tornará o novo sujeito da frase passiva.\nConjugue o verbo to be de acordo com o tempo verbal da frase ativa.\nUse o past participle do verbo principal.\nAdicione by (se necessário) para indicar quem realizou a ação (agente). Esse passo é opcional, especialmente se o agente não for relevante.\nExemplo:\nFrase ativa: The company will launch the new product.\n(A empresa lançará o novo produto.)\nPasso 1: Identificar o objeto (the new product).\nPasso 2: Verbo to be no futuro simples: will be.\nPasso 3: Particípio passado de launch: launched.\nFrase passiva: The new product will be launched (by the company).\n(O novo produto será lançado pela empresa.)', 0),
 (174, 21, 4, 4, 'Reported speech', 'Reported Speech (Discurso Indireto): O que é, Estrutura e Regras\r\nO Reported Speech (discurso indireto) é uma forma de relatar o que alguém disse sem usar as palavras exatas da pessoa. Ao invés de repetir diretamente o que foi dito (direct speech ou discurso direto), no reported speech fazemos ajustes nas palavras para integrar a fala ao contexto do discurso. O uso do reported speech é comum em narrativas, conversas e textos formais, como artigos e reportagens, e envolve algumas mudanças nos tempos verbais, pronomes e expressões de tempo.\r\n1. O Que é o Reported Speech?\r\nO reported speech é usado para descrever o que alguém disse sem citar a fala diretamente. Em vez de usar aspas para indicar as palavras exatas, fazemos uma adaptação, geralmente introduzida por verbos como say, tell, ask, entre outros.\r\nDirect Speech (Discurso Direto):\r\nHe said, “I am tired.”\r\n(Ele disse, “Estou cansado.”)\r\nReported Speech (Discurso Indireto):\r\nHe said that he was tired.\r\n(Ele disse que estava cansado.)\r\n2. Estrutura do Reported Speech\r\nNo reported speech, não usamos aspas e frequentemente mudamos os tempos verbais, pronomes e palavras que indicam tempo e lugar para que a fala se adapte ao novo contexto.\r\nIntrodução:\r\nA introdução do discurso indireto é feita com verbos como say, tell, ask, etc.\r\nQuando usamos tell, precisamos especificar a quem a fala foi direcionada.\r\nExemplo: He told me that he was tired.\r\nMudança nos Tempos Verbais:\r\nEm geral, quando o verbo introdutório está no passado, os tempos verbais na fala original mudam para um tempo passado. Isso é chamado de backshifting.\r\n3. Mudança dos Tempos Verbais (Backshifting)\r\nQuando passamos do discurso direto para o indireto, precisamos ajustar os tempos verbais para refletir que a fala aconteceu em um momento anterior. Aqui estão algumas mudanças comuns:\r\nPresent Simple para Past Simple:\r\nDirect: She said, “I like coffee.”\r\nReported: She said that she liked coffee.\r\nPresent Continuous para Past Continuous:\r\nDirect: He said, “I am reading a book.”\r\nReported: He said that he was reading a book.\r\nPresent Perfect para Past Perfect:\r\nDirect: They said, “We have finished the project.”\r\nReported: They said that they had finished the project.\r\nPast Simple para Past Perfect:\r\nDirect: She said, “I visited Paris last year.”\r\nReported: She said that she had visited Paris the previous year.\r\nWill para Would:\r\nDirect: He said, “I will call you later.”\r\nReported: He said that he would call me later.\r\nCan para Could:\r\nDirect: She said, “I can help you.”\r\nReported: She said that she could help me.\r\n4. Mudança de Pronomes\r\nOs pronomes também precisam ser adaptados para se ajustarem ao contexto da frase relatada. Isso ajuda a manter a clareza e a coesão no discurso.\r\nExemplos:\r\nDirect: He said, “I am happy.”\r\nReported: He said that he was happy.\r\n(O pronome I muda para he para se referir à mesma pessoa no discurso indireto.)\r\nDirect: She said, “We are going to the party.”\r\nReported: She said that they were going to the party.\r\n(We muda para they porque o narrador não faz parte do grupo mencionado.)\r\n5. Mudança de Expressões de Tempo e Lugar\r\nMuitas expressões de tempo e lugar mudam no discurso indireto, especialmente quando a fala foi feita em um momento diferente do relato.\r\nExemplos de Mudanças Comuns:\r\nnow → then\r\ntoday → that day\r\nyesterday → the day before / the previous day\r\ntomorrow → the next day / the following day\r\nhere → there\r\nExemplos:\r\nDirect: She said, “I will meet you here tomorrow.”\r\nReported: She said that she would meet me there the next day.\r\n6. Reported Questions (Perguntas Indiretas)\r\nAs perguntas no discurso indireto também sofrem mudanças. As perguntas são transformadas em afirmações e não utilizam o formato interrogativo com do/does/did.\r\nYes/No Questions:\r\nDirect: “Are you coming?” he asked.\r\nReported: He asked if I was coming.\r\nWh- Questions:\r\nDirect: “Where do you live?” she asked.\r\nReported: She asked where I lived.\r\n7. Reported Commands (Comandos e Ordens)\r\nPara relatar comandos, instruções ou pedidos, usamos verbos como tell, order, ask seguidos de to + infinitivo.\r\nExemplos:\r\nDirect: “Close the door,” he said to her.\r\nReported: He told her to close the door.\r\nDirect: “Please, don’t be late,” she asked.\r\nReported: She asked me not to be late.\r\n8. Quando Não Há Mudança nos Tempos Verbais\r\nNem sempre é necessário fazer o backshifting. Em casos em que a situação ainda é verdadeira no momento do relato ou quando o verbo introdutório está no presente, os tempos verbais podem permanecer os mesmos.\r\nExemplos:\r\nDirect: “I love this song,” she says.\r\nReported: She says that she loves this song.\r\n(Como o verbo introdutório está no presente, não há necessidade de mudar o tempo verbal.)', 0),
 (175, 21, 4, 5, 'Simulação de entrevista de emprego', 'A simulação de uma entrevista de emprego em inglês é uma prática extremamente valiosa para quem está aprendendo o idioma e se preparando para o mercado de trabalho. Essa atividade ajuda a desenvolver não apenas as habilidades linguísticas, mas também a confiança e a familiaridade com o formato e as expectativas de uma entrevista real.\r\n\r\nImportância da Simulação\r\nParticipar de simulações de entrevistas permite que você pratique responder a perguntas comuns que são frequentemente feitas pelos recrutadores. Isso inclui questões sobre suas experiências anteriores, habilidades, motivações e como você lida com desafios. Além de ajudar na fluência, a prática torna você mais confortável ao falar sobre suas qualificações e objetivos profissionais.', 0),
-(176, 22, 1, 1, 'Revisão dos tempos verbais perfeitos (Present Perfect, Past Perfect, Future Perfect) e introdução ao Past Perfect Continuous', 'Revisão dos Tempos Verbais Perfeitos: Present Perfect, Past Perfect, Future Perfect e Introdução ao Past Perfect Continuous\r\nOs tempos verbais perfeitos são fundamentais na língua inglesa, pois permitem que os falantes expressem ações e eventos em relação a diferentes momentos no tempo. Eles são usados para indicar que uma ação foi completada em relação a outro evento ou tempo. Neste texto, revisaremos os principais tempos verbais perfeitos: Present Perfect, Past Perfect e Future Perfect, além de introduzirmos o Past Perfect Continuous.\r\n1. Present Perfect\r\nO Present Perfect é utilizado para descrever ações que ocorreram em algum momento no passado, mas que têm relevância ou consequências no presente. Esse tempo verbal é ideal para falar sobre experiências, mudanças e ações que ainda podem estar em andamento.\r\nEstrutura:\r\nhave/has + past participle (particípio passado)\r\nExemplos:\r\nI have visited Paris.\r\n(Eu visitei Paris.)\r\nShe has lived here for five years.\r\n(Ela mora aqui há cinco anos.)\r\nThey have just finished their homework.\r\n(Eles acabaram de terminar a lição de casa.)\r\nUsos Comuns:\r\nPara relatar experiências de vida: I have seen that movie before.\r\nPara indicar ações concluídas que têm impacto no presente: He has broken his leg, so he can\'t play soccer.\r\nPara descrever situações que começaram no passado e ainda estão em andamento: We have known each other since childhood.\r\n2. Past Perfect\r\nO Past Perfect é utilizado para descrever uma ação que ocorreu antes de outra ação no passado. Esse tempo verbal é especialmente útil em narrativas e histórias para estabelecer a sequência de eventos.\r\nEstrutura:\r\nhad + past participle\r\nExemplos:\r\nI had finished the report before the meeting started.\r\n(Eu tinha terminado o relatório antes da reunião começar.)\r\nShe had already left when I arrived.\r\n(Ela já tinha saído quando eu cheguei.)\r\nThey had never seen such a beautiful sunset before that day.\r\n(Eles nunca tinham visto um pôr do sol tão bonito antes daquele dia.)\r\nUsos Comuns:\r\nPara indicar a ordem dos eventos no passado: After he had eaten, he went for a walk.\r\nPara relatar ações que aconteceram antes de um marco temporal: By the time we got to the station, the train had left.\r\n3. Future Perfect\r\nO Future Perfect é utilizado para descrever uma ação que será completada antes de um momento específico no futuro. Esse tempo verbal é útil para planejar ou prever ações que acontecerão antes de outra ação futura.\r\nEstrutura:\r\nwill have + past participle\r\nExemplos:\r\nI will have completed my degree by next year.\r\n(Eu terei completado meu diploma até o próximo ano.)\r\nShe will have finished the project before the deadline.\r\n(Ela terá terminado o projeto antes do prazo.)\r\nThey will have moved to a new house by the end of the month.\r\n(Eles terão se mudado para uma nova casa até o final do mês.)\r\nUsos Comuns:\r\nPara falar sobre ações que serão finalizadas em um momento específico no futuro: By 2025, I will have traveled to ten countries.\r\nPara expressar previsões sobre o que será concluído antes de um determinado evento futuro: I will have saved enough money by the time I retire.\r\n4. Introdução ao Past Perfect Continuous\r\nO Past Perfect Continuous é um tempo verbal que descreve uma ação que estava em andamento antes de outra ação ou momento no passado. Ele combina o aspecto contínuo com o perfeito, enfatizando a duração ou o processo da ação que ocorreu antes de outra ação no passado.\r\nEstrutura:\r\nhad been + present participle (verbo com -ing)\r\nExemplos:\r\nI had been studying for three hours when the power went out.\r\n(Eu tinha estado estudando por três horas quando a energia caiu.)\r\nShe had been working at the company for five years before she got promoted.\r\n(Ela tinha estado trabalhando na empresa por cinco anos antes de ser promovida.)\r\nThey had been waiting for over an hour when the bus finally arrived.\r\n(Eles tinham estado esperando por mais de uma hora quando o ônibus finalmente chegou.)\r\nUsos Comuns:\r\nPara enfatizar a duração de uma ação que estava em progresso antes de um ponto específico no passado: He had been playing football for two hours when it started to rain.\r\nPara relatar uma ação que foi interrompida por outra: I had been cooking dinner when the phone rang.', 0),
+(176, 22, 1, 1, 'Revisão dos tempos verbais perfeitos (Present Perfect, Past Perfect, Future Perfect) e introdução ao Past Perfect Continuous', 'Revisão dos Tempos Verbais Perfeitos: Present Perfect, Past Perfect, Future Perfect e Introdução ao Past Perfect Continuous.\r\nOs tempos verbais perfeitos são fundamentais na língua inglesa, pois permitem que os falantes expressem ações e eventos em relação a diferentes momentos no tempo. Eles são usados para indicar que uma ação foi completada em relação a outro evento ou tempo. Neste texto, revisaremos os principais tempos verbais perfeitos: Present Perfect, Past Perfect e Future Perfect, além de introduzirmos o Past Perfect Continuous.\r\n1. Present Perfect\r\nO Present Perfect é utilizado para descrever ações que ocorreram em algum momento no passado, mas que têm relevância ou consequências no presente. Esse tempo verbal é ideal para falar sobre experiências, mudanças e ações que ainda podem estar em andamento.\r\nEstrutura:\r\nhave/has + past participle (particípio passado)\r\nExemplos:\r\nI have visited Paris.\r\n(Eu visitei Paris.)\r\nShe has lived here for five years.\r\n(Ela mora aqui há cinco anos.)\r\nThey have just finished their homework.\r\n(Eles acabaram de terminar a lição de casa.)\r\nUsos Comuns:\r\nPara relatar experiências de vida: I have seen that movie before.\r\nPara indicar ações concluídas que têm impacto no presente: He has broken his leg, so he can\'t play soccer.\r\nPara descrever situações que começaram no passado e ainda estão em andamento: We have known each other since childhood.\r\n2. Past Perfect\r\nO Past Perfect é utilizado para descrever uma ação que ocorreu antes de outra ação no passado. Esse tempo verbal é especialmente útil em narrativas e histórias para estabelecer a sequência de eventos.\r\nEstrutura:\r\nhad + past participle\r\nExemplos:\r\nI had finished the report before the meeting started.\r\n(Eu tinha terminado o relatório antes da reunião começar.)\r\nShe had already left when I arrived.\r\n(Ela já tinha saído quando eu cheguei.)\r\nThey had never seen such a beautiful sunset before that day.\r\n(Eles nunca tinham visto um pôr do sol tão bonito antes daquele dia.)\r\nUsos Comuns:\r\nPara indicar a ordem dos eventos no passado: After he had eaten, he went for a walk.\r\nPara relatar ações que aconteceram antes de um marco temporal: By the time we got to the station, the train had left.\r\n3. Future Perfect\r\nO Future Perfect é utilizado para descrever uma ação que será completada antes de um momento específico no futuro. Esse tempo verbal é útil para planejar ou prever ações que acontecerão antes de outra ação futura.\r\nEstrutura:\r\nwill have + past participle\r\nExemplos:\r\nI will have completed my degree by next year.\r\n(Eu terei completado meu diploma até o próximo ano.)\r\nShe will have finished the project before the deadline.\r\n(Ela terá terminado o projeto antes do prazo.)\r\nThey will have moved to a new house by the end of the month.\r\n(Eles terão se mudado para uma nova casa até o final do mês.)\r\nUsos Comuns:\r\nPara falar sobre ações que serão finalizadas em um momento específico no futuro: By 2025, I will have traveled to ten countries.\r\nPara expressar previsões sobre o que será concluído antes de um determinado evento futuro: I will have saved enough money by the time I retire.\r\n4. Introdução ao Past Perfect Continuous\r\nO Past Perfect Continuous é um tempo verbal que descreve uma ação que estava em andamento antes de outra ação ou momento no passado. Ele combina o aspecto contínuo com o perfeito, enfatizando a duração ou o processo da ação que ocorreu antes de outra ação no passado.\r\nEstrutura:\r\nhad been + present participle (verbo com -ing)\r\nExemplos:\r\nI had been studying for three hours when the power went out.\r\n(Eu tinha estado estudando por três horas quando a energia caiu.)\r\nShe had been working at the company for five years before she got promoted.\r\n(Ela tinha estado trabalhando na empresa por cinco anos antes de ser promovida.)\r\nThey had been waiting for over an hour when the bus finally arrived.\r\n(Eles tinham estado esperando por mais de uma hora quando o ônibus finalmente chegou.)\r\nUsos Comuns:\r\nPara enfatizar a duração de uma ação que estava em progresso antes de um ponto específico no passado: He had been playing football for two hours when it started to rain.\r\nPara relatar uma ação que foi interrompida por outra: I had been cooking dinner when the phone rang.', 0),
 (177, 22, 1, 2, 'Vocabulário relacionado a temas acadêmicos e pesquisas', 'Vocabulário Essencial para o Ambiente Acadêmico em Inglês: Um Guia Completo\r\nIntrodução\r\nDominar o vocabulário específico é fundamental para se destacar no ambiente acadêmico em língua inglesa. Termos como research, thesis, e hypothesis são apenas a ponta do iceberg de um vasto léxico utilizado em artigos científicos, apresentações, discussões em sala de aula e muito mais. Neste guia, exploraremos os principais termos e expressões, fornecendo exemplos e dicas para aprimorar seu vocabulário e comunicação acadêmica.\r\nTermos Fundamentais\r\nResearch: Pesquisa. Refere-se ao processo sistemático de investigar e descobrir informações sobre um tópico específico.\r\nExemplo: I am conducting research on the impact of climate change on coastal cities. (Estou conduzindo uma pesquisa sobre o impacto das mudanças climáticas em cidades costeiras.)\r\nThesis: Tese. É um trabalho acadêmico extenso que apresenta uma argumentação original sobre um determinado tema.\r\nExemplo: My thesis explores the relationship between social media use and mental health in adolescents. (Minha tese explora a relação entre o uso de redes sociais e a saúde mental em adolescentes.)\r\nHypothesis: Hipótese. É uma suposição ou explicação provisória para um fenômeno, que pode ser testada através de pesquisas.\r\nExemplo: The hypothesis is that increased screen time leads to decreased attention span in children. (A hipótese é que o aumento do tempo de tela leva à diminuição da capacidade de atenção em crianças.)\r\nTheory: Teoria. É um conjunto de conceitos e princípios inter-relacionados que explicam um fenômeno natural ou social.\r\nExemplo: The theory of relativity is a cornerstone of modern physics. (A teoria da relatividade é uma pedra angular da física moderna.)\r\nVerbos Comuns em Textos Acadêmicos\r\nTo analyze: Analisar\r\nTo argue: Argumentar\r\nTo compare: Comparar\r\nTo contrast: Contrastar\r\nTo define: Definir\r\nTo describe: Descrever\r\nTo discuss: Discutir\r\nTo evaluate: Avaliar\r\nTo examine: Examinar\r\nTo investigate: Investigar\r\nExpressões Úteis\r\nAccording to: De acordo com\r\nIn addition: Além disso\r\nFurthermore: Além do mais\r\nHowever: Entretanto\r\nMoreover: Além do mais\r\nOn the one hand... on the other hand: Por um lado... por outro lado\r\nTherefore: Portanto\r\nDicas para Aumentar seu Vocabulário\r\nLeia artigos científicos: Exponha-se a linguagem acadêmica autêntica.\r\nUse um dicionário especializado: Procure por dicionários que se concentram em vocabulário acadêmico.\r\nFaça flashcards: Crie cartões com novos termos e suas definições.\r\nParticipe de grupos de estudo: Discuta conceitos e aprenda com seus colegas.\r\nEscreva regularmente: Pratique a utilização do novo vocabulário em seus próprios textos.\r\n', 0),
 (178, 22, 1, 3, 'Expressões idiomáticas formais e informais', 'Expressões Idiomáticas em Inglês: Desvendando os Segredos da Linguagem Cotidiana\r\nIntrodução\r\nAs expressões idiomáticas, ou idioms, são frases feitas em inglês que possuem um significado figurado, diferente da soma dos significados individuais de cada palavra. Elas são como as gírias e ditados populares em português, e são amplamente utilizadas em conversas do dia a dia, conferindo mais naturalidade e vivacidade à comunicação. Neste guia, vamos explorar as expressões idiomáticas, com foco nas diferenças entre as formas formais e informais, e apresentar alguns exemplos comuns.\r\nFormais vs. Informais\r\nAs expressões idiomáticas podem ser classificadas em formais e informais, dependendo do contexto em que são utilizadas.\r\nExpressões Idiomáticas Formais: Geralmente utilizadas em contextos profissionais, acadêmicos ou em situações mais sérias. Elas tendem a ser mais sofisticadas e menos conhecidas do público em geral.\r\nExemplo: To be on the ball (estar atento, estar ligado).\r\nExpressões Idiomáticas Informais: São mais comuns em conversas do dia a dia, entre amigos e familiares. Elas podem ser mais coloquiais e até mesmo gírias.\r\nExemplo: To break the ice (quebrar o gelo, iniciar uma conversa).\r\nExemplos de Expressões Idiomáticas Comuns\r\nTo break the ice: Quebrar o gelo (iniciar uma conversa, especialmente em uma situação social tensa).\r\nExemplo: I told a joke to break the ice at the party. (Contei uma piada para quebrar o gelo na festa.)\r\nTo be on the same page: Estar na mesma página (ter a mesma opinião, entender-se).\r\nExemplo: Before we start the project, let\'s make sure we\'re all on the same page. (Antes de começarmos o projeto, vamos garantir que todos estejam na mesma página.)\r\nTo spill the beans: Espalhar o segredo (revelar uma informação confidencial).\r\nExemplo: Don\'t spill the beans about the surprise party. (Não espalhe o segredo sobre a festa surpresa.)\r\nTo kick the bucket: Chutar o balde (morrer - expressão informal).\r\nExemplo: If he kicks the bucket, his son will inherit the company. (Se ele chutar o balde, seu filho irá herdar a empresa.)\r\nTo hit the books: Estudar com afinco (expressão informal).\r\nExemplo: I have to hit the books tonight if I want to pass the exam. (Tenho que estudar muito esta noite se quiser passar no exame.)', 0),
 (179, 22, 1, 4, 'Modal verbs (can, could, may, might, must, should) em contextos mais complexos', 'Verbos Modais: Expressando Deduções, Possibilidades e Obrigações\r\nOs verbos modais são ferramentas poderosas na língua inglesa que nos permitem expressar uma variedade de ideias, como capacidade, permissão, possibilidade, obrigação e dedução. Eles são como pequenas palavras que adicionam um significado extra aos verbos principais da frase.\r\nExpressando Deduções\r\nQuando queremos expressar uma dedução ou fazer uma suposição, utilizamos verbos modais como:\r\nMust: Indica uma forte certeza de que algo é verdade.\r\nExemplo: She must be tired. She\'s been working all day. (Ela deve estar cansada. Ela trabalhou o dia todo.)\r\nCan\'t: Indica uma forte certeza de que algo não é verdade.\r\nExemplo: He can\'t be at home. His car is not in the garage. (Ele não pode estar em casa. O carro dele não está na garagem.)\r\nMight: Indica uma possibilidade, mas com menor certeza.\r\nExemplo: They might come to the party, but I\'m not sure. (Eles podem vir para a festa, mas não tenho certeza.)\r\nCould: Indica uma possibilidade no passado ou uma habilidade no passado.\r\nExemplo: She could speak French when she was a child. (Ela podia falar francês quando era criança.)\r\nExpressando Possibilidades\r\nPara expressar possibilidades, utilizamos verbos modais como:\r\nMay: Indica uma permissão ou uma possibilidade.\r\nExemplo: You may leave now. (Você pode ir agora.)\r\nMight: Indica uma possibilidade mais remota.\r\nExemplo: It might rain tomorrow. (Pode chover amanhã.)\r\nExpressando Obrigações\r\nPara expressar obrigações, utilizamos verbos modais como:\r\nMust: Indica uma obrigação forte e interna.\r\nExemplo: You must study hard to pass the exam. (Você deve estudar muito para passar no exame.)\r\nHave to: Indica uma obrigação externa, geralmente imposta por uma regra ou outra pessoa.\r\nExemplo: You have to wear a uniform at school. (Você tem que usar uniforme na escola.)\r\nShould: Indica uma recomendação ou conselho.\r\nExemplo: You should eat more fruits and vegetables. (Você deveria comer mais frutas e legumes.)\r\nExpressões com Verbos Modais em Contextos Mais Complexos\r\nOs verbos modais podem ser utilizados em diversas construções e expressões, tornando a língua inglesa mais rica e expressiva. Algumas delas são:\r\nWould like: Expressa um desejo ou pedido de forma mais educada.\r\nExemplo: I would like to have a cup of coffee. (Eu gostaria de tomar uma xícara de café.)\r\nUsed to: Expressa um hábito no passado que não ocorre mais.\r\nExemplo: I used to play the piano when I was a child. (Eu costumava tocar piano quando era criança.)\r\nBe supposed to: Indica uma obrigação ou expectativa.\r\nExemplo: You\'re supposed to be here at 5 pm. (Você deveria estar aqui às 5 da tarde.)', 0),
@@ -179,6 +187,10 @@ CREATE TABLE `nivel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- RELACIONAMENTOS PARA TABELAS `nivel`:
+--
+
+--
 -- Despejando dados para a tabela `nivel`
 --
 
@@ -200,6 +212,10 @@ CREATE TABLE `perguntas` (
   `id` int(11) NOT NULL,
   `pergunta` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- RELACIONAMENTOS PARA TABELAS `perguntas`:
+--
 
 --
 -- Despejando dados para a tabela `perguntas`
@@ -246,6 +262,12 @@ CREATE TABLE `quiz` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- RELACIONAMENTOS PARA TABELAS `quiz`:
+--   `id_usuario`
+--       `usuarios` -> `id`
+--
+
+--
 -- Despejando dados para a tabela `quiz`
 --
 
@@ -254,7 +276,9 @@ INSERT INTO `quiz` (`id`, `id_usuario`, `resposta_correta`, `completado`) VALUES
 (18, 31, 10, 1),
 (19, 32, 10, 1),
 (20, 32, 10, 1),
-(21, 33, 8, 1);
+(21, 33, 8, 1),
+(22, 35, 12, 1),
+(23, 38, 12, 1);
 
 -- --------------------------------------------------------
 
@@ -268,6 +292,14 @@ CREATE TABLE `respostas` (
   `resposta` varchar(250) NOT NULL,
   `correta` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- RELACIONAMENTOS PARA TABELAS `respostas`:
+--   `id_pergunta`
+--       `perguntas` -> `id`
+--   `id_pergunta`
+--       `perguntas` -> `id`
+--
 
 --
 -- Despejando dados para a tabela `respostas`
@@ -362,21 +394,27 @@ CREATE TABLE `usuarios` (
   `email` varchar(255) NOT NULL,
   `senha` varchar(255) NOT NULL,
   `admin` tinyint(1) NOT NULL,
-  `login` tinyint(1) NOT NULL
+  `login` tinyint(1) NOT NULL,
+  `sobrenome` varchar(255) NOT NULL,
+  `telefone` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- RELACIONAMENTOS PARA TABELAS `usuarios`:
+--
 
 --
 -- Despejando dados para a tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `admin`, `login`) VALUES
-(29, 'vini', 'a@a', '$2y$10$4bL3mCcMw4lCkrZgOPC17uchRfoLlPJ.i.R37nj8K7AP/Upp7PyaG', 0, 1),
-(30, 'lidia', 'b@b', '$2y$10$cu2zTiqja3AesnuAotDQV.Tue2ufWzxrZO6CKBwSTly8lbXl2/G8.', 1, 0),
-(31, 'lucas', 'c@c', '$2y$10$9PbIKriY1HnRt.OWFe.BE.oH1lOri/u7HzuPMGjkfQTZkMMJIOsVO', 0, 1),
-(32, 'teste', 'd@d', '$2y$10$ycpotx9sCQWFPPx8GWur6.OU.93eKNNhU82OUSbEJmrt.r6sfOh4.', 0, 1),
-(33, 'Lucas', 'lucas@email.com', '$2y$10$kLmqKXke5v8mPJ4cdPsGAeDXjTitEoCFRT.z3mDzkax7QpLL1SV0C', 0, 1),
-(34, 'Lucas', 'lucas.c@aluno.ifsp.edu.br', '123456', 0, 0),
-(35, 'Igor', 'lucaszeno_@hotmail.com', '$2y$10$d9Vf9IgHwjpnia0zm4Cc5urra7XNimMVCyVzOYwioYestOGA85RLq', 0, 0);
+INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `admin`, `login`, `sobrenome`, `telefone`) VALUES
+(29, 'Vini', 'a@a', '$2y$10$25Gi4uOzHt/f3wRnoEoynO/tLGmcDUAkb.BT6erelmLelYSg0rmyu', 0, 1, 'Tavares', '(11) 2466-4816'),
+(30, 'lidia', 'b@b', '$2y$10$cu2zTiqja3AesnuAotDQV.Tue2ufWzxrZO6CKBwSTly8lbXl2/G8.', 1, 0, '', ''),
+(31, 'lucas', 'c@c', '$2y$10$9PbIKriY1HnRt.OWFe.BE.oH1lOri/u7HzuPMGjkfQTZkMMJIOsVO', 0, 1, '', ''),
+(32, 'teste', 'd@d', '$2y$10$ycpotx9sCQWFPPx8GWur6.OU.93eKNNhU82OUSbEJmrt.r6sfOh4.', 0, 1, '', ''),
+(33, 'Lucas', 'lucas@email.com', '$2y$10$kLmqKXke5v8mPJ4cdPsGAeDXjTitEoCFRT.z3mDzkax7QpLL1SV0C', 0, 1, '', ''),
+(35, 'Igor', 'lucaszeno_@hotmail.com', '$2y$10$d9Vf9IgHwjpnia0zm4Cc5urra7XNimMVCyVzOYwioYestOGA85RLq', 0, 1, '', ''),
+(38, 'Pedro', 'pedu@pedu', '$2y$10$HQr2XopSOI8Nbokmjybk4OiQkfGJb5NLgGxacvWYG30ubWBX4wJYq', 0, 1, 'Henrique', '(11) 2466-4816');
 
 -- --------------------------------------------------------
 
@@ -390,6 +428,14 @@ CREATE TABLE `usuario_nivel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- RELACIONAMENTOS PARA TABELAS `usuario_nivel`:
+--   `id_nivel`
+--       `nivel` -> `id`
+--   `id_usuario`
+--       `usuarios` -> `id`
+--
+
+--
 -- Despejando dados para a tabela `usuario_nivel`
 --
 
@@ -397,7 +443,9 @@ INSERT INTO `usuario_nivel` (`id_nivel`, `id_usuario`) VALUES
 (22, 29),
 (21, 31),
 (21, 32),
-(20, 33);
+(20, 33),
+(21, 35),
+(21, 38);
 
 --
 -- Índices para tabelas despejadas
@@ -475,7 +523,7 @@ ALTER TABLE `perguntas`
 -- AUTO_INCREMENT de tabela `quiz`
 --
 ALTER TABLE `quiz`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de tabela `respostas`
@@ -487,7 +535,7 @@ ALTER TABLE `respostas`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- Restrições para tabelas despejadas

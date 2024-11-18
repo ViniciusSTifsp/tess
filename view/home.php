@@ -3,13 +3,6 @@
     require_once('../controllers/ConteudoController.php');
     $conteudoController = new ConteudoController();
     $semana = (isset($_REQUEST['semana']) ? $_REQUEST['semana'] : 1);
-    if (isset($_POST['dia'])) {
-        $conteudo = $conteudoController->conteudoModal($semana, $_POST['dia']);
-    }
-    else {
-        $conteudo = $conteudoController->conteudoModal($semana, 1);
-    }
-    
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -40,11 +33,11 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalGuiaLabel"><?= $conteudo->getTitulo() ?></h5>
+                    <h5 class="modal-title" id="modalTitulo"></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p id="modalTexto">Conteúdo do guia aqui...</p>
+                    <p id="modalTexto"></p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
@@ -59,28 +52,42 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Arquivo JS personalizado -->
     <script src="../src/js/script2.js"></script>
-    <script>
-        function abrirModal(dia) {
-            // Atualizar o conteúdo do modal com o dia selecionado
-            postAjax(dia);
-            var textoGuia = "<?php echo $conteudo->getDescricao() ?>";
-            document.getElementById("modalTexto").innerText = textoGuia;
- 
-            // Abrir o modal
-            var modal = new bootstrap.Modal(document.getElementById('modalGuia'));
-            modal.show();
-        }
 
-        function postAjax(dia) {
+    <script>
+        $('.conteudo').click(function(){
+
+            var dia = $(this).data('id');
+
+            var url_string = window.location.href;
+            var url = new URL(url_string);
+            var semana = url.searchParams.get("semana");
+
             $.ajax({
-                action: '../view/home.php',
+
+                url: '../config/conteudo_handler.php',
+                data: {
+                          'dia': dia,
+                          'semana': semana ? semana : 1
+                      },
                 type: 'POST',
-                data: {dia:dia},
-                success:function(data){
-                   alert("got response as "+"'"+dia+"'");
+
+                success: function(result) {
+                    console.log(result);
+                    const json = JSON.parse(result);
+
+                    var modalTitulo = json.titulo;
+                    var modalTexto = json.descricao;
+
+                    document.getElementById("modalTitulo").innerText = modalTitulo;
+                    document.getElementById("modalTexto").innerText = modalTexto;
+
+                    var modal = new bootstrap.Modal(document.getElementById('modalGuia'));
+                    modal.show();
                 }
-            });
-        }
+
+            })
+
+        });
     </script>
 </body>
  
