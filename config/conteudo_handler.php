@@ -14,7 +14,7 @@
             echo json_encode($resultado);
         }
         else {
-            echo "";
+            echo "Teste";
         }
         
     }
