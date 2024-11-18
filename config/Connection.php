@@ -3,7 +3,7 @@
 class Connection {
     
     private $host = '144.217.39.54';
-    private $username = 'hostdeprojetos';
+    private $username = 'hostdeprojetos_tess';
     private $password = 'ifspgru@2022';
     private $database = 'hostdeprojetos_tess';
 
