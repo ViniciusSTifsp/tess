@@ -72,7 +72,7 @@
                 type: 'POST',
 
                 success: function(result) {
-                    console.log(result);
+                    //console.log(result);
                     const json = JSON.parse(result);
 
                     var modalTitulo = json.titulo;
