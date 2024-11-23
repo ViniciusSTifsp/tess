@@ -78,8 +78,8 @@
                     var modalTitulo = json.titulo;
                     var modalTexto = json.descricao;
 
-                    document.getElementById("modalTitulo").innerHTML = modalTitulo;
-                    document.getElementById("modalTexto").innerHTML = modalTexto;
+                    document.getElementById("modalTitulo").innerText = modalTitulo;
+                    document.getElementById("modalTexto").innerText = modalTexto;
 
                     var modal = new bootstrap.Modal(document.getElementById('modalGuia'));
                     modal.show();
