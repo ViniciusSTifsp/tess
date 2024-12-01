@@ -23,7 +23,14 @@
 </head>
 
 <body>
-    <?php include_once "../module/menu.php" ?>
+    <?php 
+        if($_SESSION['admin']){
+            include_once "../module/menu_admin.php";
+        }
+        else {
+            include_once "../module/menu.php";
+        }
+    ?>
     <!-- Seção de Dados Pessoais -->
     <div class="profile-section mt-5">
         <div class="profile-header">
