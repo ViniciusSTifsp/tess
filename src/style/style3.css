@@ -268,3 +268,37 @@ body {
     background-color: #4b95c7;
     color: #fff;
   }
+
+  #modalTexto{
+    text-align: justify;
+  }
+  #modalMusica{
+    text-align: justify;
+    font-weight: bold;
+  }
+  .imgSpotify {
+    width: 100%;           /* A largura da imagem será 100% do contêiner pai */
+    max-width: 465px;      /* A largura máxima será de 465px */
+    height: auto;          /* A altura será ajustada proporcionalmente */
+}
+.imgTessie {
+    position: absolute;
+    width: 465px;
+    height: 465px; 
+    float: right; 
+    padding-right: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 0;
+    position: absolute; 
+    right: 0px; 
+    bottom: 0;
+}
+
+/* Media Query para esconder a imagem em telas menores que 768px (celulares e tablets) */
+@media (max-width: 1080px) {
+    .imgTessie {
+        display: none;
+    }
+}
+
+

@@ -3,6 +3,8 @@
     require_once('../controllers/ConteudoController.php');
     $conteudoController = new ConteudoController();
     $semana = (isset($_REQUEST['semana']) ? $_REQUEST['semana'] : 1);
+    require_once('../controllers/SpotifyController.php');
+    $spotifyController = new SpotifyController();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -38,6 +40,9 @@
                 </div>
                 <div class="modal-body">
                     <p id="modalTexto"></p>
+                    <p id="modalMusica">Para alavancar o seu aprendizado, segue uma recomendação de música!</p>
+                    <?php $spotifyController->selecionaMusica();?> <br>
+                    <p id="modalMusica">Atualize a página para uma nova recomendação!</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
@@ -45,6 +50,8 @@
             </div>
         </div>
     </div>
+
+    <img src="../src/images/masco_colorido2_adobe_express.png" class="imgTessie" alt="">
  
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

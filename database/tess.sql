@@ -20,8 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `tess_oficial`
 --
-CREATE DATABASE IF NOT EXISTS `tess_oficial` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `tess_oficial`;
+CREATE DATABASE IF NOT EXISTS `hostdeprojetos_tess` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `hostdeprojetos_tess`;
 
 -- --------------------------------------------------------
 
