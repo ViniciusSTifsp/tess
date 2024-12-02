@@ -17,7 +17,7 @@ class UsuarioController {
             header('Location: ../view/login.php');
         }
         else {
-            echo "<script>alert('Esse email já está cadastrado!')</script>";
+            header('Location: ../view/cadastro.php?msg=E-mail já cadastrado');
         }
         
     }
@@ -45,7 +45,7 @@ class UsuarioController {
                     $_SESSION['nome'] = $user['nome'];
                     $_SESSION['admin'] = $user['admin'];
                     $_SESSION['email'] = $email;
-                    header('Location: ../view/sistema.php');
+                    header('Location: ../view/admin.php');
                 } else{
                     $_SESSION['id'] = $user['id'];
                     $_SESSION['nome'] = $user['nome'];

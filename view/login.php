@@ -62,7 +62,7 @@
                             <button class="btn btn-lg btn-primary w-100 fs-6 inputSubmit" style="background: #2E8098; border-color:#2E8098" type="submit" name="submit" value="Enviar">Login</button>
                         </div>
                         <div>
-                            <?php echo ((isset($_REQUEST['msg']) ? $_REQUEST['msg'] : "") )?>
+                            <?php echo "<strong>" . (isset($_REQUEST['msg']) ? $_REQUEST['msg'] : "") . "</strong>"; ?>
                         </div>
                         <div class="row">
                             <small>Não tem uma conta? <a href="../view/cadastro.php">Cadastre-se</a></small>

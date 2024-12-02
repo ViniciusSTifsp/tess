@@ -23,14 +23,7 @@
 </head>
 
 <body>
-    <?php 
-        if($_SESSION['admin']){
-            include_once "../module/menu_admin.php";
-        }
-        else {
-            include_once "../module/menu.php";
-        }
-    ?>
+    <?php require_once('../config/is_admin.php'); ?>
     <!-- Seção de Dados Pessoais -->
     <div class="profile-section mt-5">
         <div class="profile-header">
@@ -100,7 +93,7 @@
     <!-- Seção de Alteração de Senha -->
     <div class="profile-section mt-4">
         <h5>Alterar Senha</h5>
-        <?php echo '<p>'.((isset($_REQUEST['msg']) ? $_REQUEST['msg'] : "") ).'</p>' ?>
+        <?php echo '<p><strong>'.((isset($_REQUEST['msg']) ? $_REQUEST['msg'] : "") ).'</strong></p>' ?>
         <form id="senhaForm" action="../config/senha_handler.php" method="POST">
             <div class="mb-3">
                 <label for="senhaAtual" class="form-label">Senha Atual</label>
@@ -127,7 +120,6 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Arquivo JS personalizado -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <script src="../src/js/script2.js"></script>
 </body>
 

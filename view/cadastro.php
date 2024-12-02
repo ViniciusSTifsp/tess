@@ -59,17 +59,11 @@
                         <div class="input-group mb-3">
                             <input type="password" class="form-control form-control-lg bg-light fs-6 inputUser" name="senha" placeholder="Senha" id="senha" required>
                         </div>
-                        <div class="input-group mb-5 d-flex justify-content-between">
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="formCheck">
-                                <label for="formCheck" class="form-check-label text-secondary"><small>Lembre de mim</small></label>
-                            </div>
-                            <div class="forgot">
-                                <small><a href="#">Esqueceu a senha?</a></small>
-                            </div>
-                        </div>
                         <div class="input-group mb-3">
                             <button class="btn btn-lg btn-primary w-100 fs-6 inputSubmit" style="background:#2E8098; border-color:#2E8098" type="submit" name="submit" value="Enviar">Cadastre-se</button>
+                        </div>
+                        <div>
+                            <?php echo '<strong>' . (isset($_REQUEST['msg']) ? $_REQUEST['msg'] : "") . '</strong>'; ?>
                         </div>
                         <div class="row">
                             <small>Já tem uma conta? <a href="../view/login.php">Login</a></small>

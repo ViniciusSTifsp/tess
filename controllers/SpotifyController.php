@@ -33,7 +33,7 @@ class SpotifyController
 
         echo '<strong>Nome: ' . $result->items[$i]->track->name . '<br/>';
         echo 'Spotify URL: ' . $result->items[$i]->track->external_urls->spotify . '</strong><br/><br/>';
-        echo '<img src="' . $result->items[$i]->track->album->images[0]->url . '"/><br/>';
+        echo '<img src="' . $result->items[$i]->track->album->images[0]->url . '" class="imgSpotify"/><br/>';
         
     }
 }

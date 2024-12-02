@@ -26,4 +26,26 @@ class AdminDAO {
         return mysqli_query($con->connection(), $query);
     }
 
+    public function getAllConteudo(Connection $con){
+        $query = 'SELECT * FROM conteudo';
+        return mysqli_query($con->connection(), $query);
+    }
+
+    public function getConteudo(Connection $con, $id) {
+        $query = 'SELECT * FROM conteudo WHERE id = '.$id;
+        return mysqli_query($con->connection(), $query);
+    }
+
+    public function updateConteudo(Connection $con, Conteudo $conteudo, Nivel $nivel) {
+        $query = 'UPDATE 
+                     usuarios
+                 SET
+                    titulo = "'.$conteudo->getTitulo().'"'.
+                    ',descricao = "'.$conteudo->getDescricao().'"'.
+                 'WHERE
+                     id = "'.$conteudo->getId().'"';
+                     
+        return mysqli_query($con->connection(), $query);
+    }
+
 }
