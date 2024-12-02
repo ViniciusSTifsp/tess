@@ -12,4 +12,9 @@ class ConteudoDAO {
         return mysqli_query($con->connection(), $query);
     }
 
+    public function setConcluido(Connection $con, $id) {
+        $query = 'UPDATE conteudo SET concluido = 1 WHERE id = '.$id;
+        return mysqli_query($con->connection(), $query);
+    }
+
 }

@@ -33,15 +33,63 @@ class ConteudoController {
 
                 $conteudo->setDia($dado_conteudo['dia']);
                 $conteudo->setTitulo($dado_conteudo['titulo']);
+                $conteudo->setConcluido($dado_conteudo['concluido']);
 
-                echo     '<div class="col-sm conteudo" data-id="'.$conteudo->getDia().'">';
-                echo         '<div class="card h-100">';
-                echo             '<div class="card-body">';
-                echo                 '<h5 class="card-title fw-bold">Dia '.$conteudo->getDia().'</h5>';
-                echo                 '<p class="card-text">'.$conteudo->getTitulo().'</p>';
-                echo             '</div>';
-                echo         '</div>';
-                echo     '</div>';
+                if($conteudo->getDia() == 1 && $semana == 1) {
+                    
+                    echo     '<div class="col-sm conteudo" data-id="'.$conteudo->getDia().'">';
+                    $this->card($conteudo->getDia(), $conteudo->getTitulo());
+                
+                } 
+                else {
+                    if($semana != 1) {
+                        
+                        $resultado_semana = $conteudoDAO->getConteudoSemana($conexao, $nivel, $semana - 1);
+                        $resultado_dia = $conteudoDAO->getConteudoDia($conexao, $nivel, $semana - 1, $resultado_semana->num_rows);
+                        $dia = $resultado_dia->fetch_assoc();
+
+                        //var_dump($dia);
+
+                        if($dia['concluido'] == 1 && $conteudo->getDia() == 1) {
+                            echo     '<div class="col-sm conteudo" data-id="'.$conteudo->getDia().'">';
+                            $this->card($conteudo->getDia(), $conteudo->getTitulo());
+                        }
+                        else {
+                            $resultado_dia = $conteudoDAO->getConteudoDia($conexao, $nivel, $semana, $conteudo->getDia() - 1);
+                            $dia = $resultado_dia->fetch_assoc();
+                            
+                            if(!is_null($dia)) {
+                                if($dia['concluido'] == 1) {
+                                    echo     '<div class="col-sm conteudo" data-id="'.$conteudo->getDia().'">';
+                                    $this->card($conteudo->getDia(), $conteudo->getTitulo());
+                                }
+                                else {
+                                    echo     '<div class="col-sm" data-id="'.$conteudo->getDia().'">';
+                                    $this->card($conteudo->getDia(), $conteudo->getTitulo());
+                                }
+                            }
+                            else {
+                                echo     '<div class="col-sm" data-id="'.$conteudo->getDia().'">';
+                                $this->card($conteudo->getDia(), $conteudo->getTitulo());
+                            }
+                        }
+                    }
+                    else {
+                        $resultado_dia = $conteudoDAO->getConteudoDia($conexao, $nivel, $semana, $conteudo->getDia() - 1);
+                        $dia = $resultado_dia->fetch_assoc();
+                        
+                        if($dia['concluido'] == 1) {
+                            
+                            echo     '<div class="col-sm conteudo" data-id="'.$conteudo->getDia().'">';
+                            $this->card($conteudo->getDia(), $conteudo->getTitulo());
+                        }
+                        else {
+                            echo     '<div class="col-sm" data-id="'.$conteudo->getDia().'">';
+                            $this->card($conteudo->getDia(), $conteudo->getTitulo());
+                        }
+                    }
+                }
+                
             }
 
             echo     '</div>';
@@ -70,6 +118,7 @@ class ConteudoController {
 
         $dado_conteudo = $resultado_conteudo->fetch_assoc();
 
+        $conteudo->setId($dado_conteudo['id']);
         $conteudo->setTitulo($dado_conteudo['titulo']);
         $conteudo->setDescricao($dado_conteudo['descricao']);
         $conteudo->setConcluido($dado_conteudo['concluido']);
@@ -84,6 +133,32 @@ class ConteudoController {
 
         return $array;
 
+    }
+
+    public function concluiConteudo($id) {
+
+        $conexao = new Connection();
+        $conteudoDAO = new ConteudoDAO();
+
+        $resultado = $conteudoDAO->setConcluido($conexao, $id);
+
+        if($resultado) {
+            return "Contéudo concluído com sucesso!";
+        }
+        else {
+            return "Falha ao concluir conteúdo!";
+        }
+
+    }
+
+    private function card($dia, $titulo) {
+        echo            '<div class="card h-100">';
+        echo                '<div class="card-body">';
+        echo                    '<h5 class="card-title fw-bold">Dia '.$dia.'</h5>';
+        echo                    '<p class="card-text">'.$titulo.'</p>';
+        echo                '</div>';
+        echo            '</div>';
+        echo        '</div>';
     }
 
 }

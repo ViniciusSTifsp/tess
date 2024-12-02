@@ -34,6 +34,7 @@
     <div class="modal fade" id="modalGuia" tabindex="-1" aria-labelledby="modalGuiaLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
+                <p class="alert-success" id="resultado"></p>
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalTitulo"></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -46,6 +47,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-success concluido" id="concluido" value="">Concluído</button>
                 </div>
             </div>
         </div>
@@ -82,11 +84,21 @@
                     //console.log(result);
                     const json = JSON.parse(result);
 
+                    var modalId = json.id;
                     var modalTitulo = json.titulo;
                     var modalTexto = json.descricao;
+                    var concluido = json.concluido;
 
                     document.getElementById("modalTitulo").innerText = modalTitulo;
                     document.getElementById("modalTexto").innerText = modalTexto;
+                    document.getElementById("concluido").value = modalId;
+
+                    if(concluido == '1'){
+                        document.getElementById("concluido").setAttribute("disabled", "true");
+                    }
+                    else {
+                        document.getElementById("concluido").removeAttribute("disabled")
+                    }
 
                     var modal = new bootstrap.Modal(document.getElementById('modalGuia'));
                     modal.show();
@@ -95,6 +107,25 @@
             })
 
         });
+
+        $('.concluido').click(function(){
+            
+            var id = document.getElementById('concluido').value;
+            
+            $.ajax({
+                url: '../config/concluido_handler.php',
+                data: {
+                        'id': id
+                    },
+                type: 'POST',
+
+                success: function(result) {
+                    document.getElementById("modalTitulo").innerText = result;
+                    document.getElementById("concluido").setAttribute("disabled", "true");
+                }
+            })
+        });
+
     </script>
 </body>
  
