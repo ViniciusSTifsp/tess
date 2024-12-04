@@ -3,6 +3,7 @@
     require_once('../controllers/UsuarioController.php');
 
     if(isset($_REQUEST['submit']) && !empty($_REQUEST['email']) && !empty($_REQUEST['senha'])) {
+        header('Location: ../view/login.php?msg=Usuário ou senha incorretos.');
         $email = $_REQUEST['email'];
         $senha = $_REQUEST['senha'];
 
