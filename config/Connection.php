@@ -2,16 +2,16 @@
 
 class Connection {
     
-    /*private $host = 'localhost';
+    private $host = 'localhost';
     private $username = 'ifhostgru_tess';
     private $password = 'ifspgru@2024';
-    private $database = 'ifhostgru_tess';*/
+    private $database = 'ifhostgru_tess';
 
     
-private $host = '144.217.39.54';
+    /*private $host = '144.217.39.54';
     private $username = 'hostdeprojetos_tess';
     private $password = 'ifspgru@2022';
-    private $database = 'hostdeprojetos_tess';
+    private $database = 'hostdeprojetos_tess';*/
 
     public function connection() {
         $con = new mysqli($this->host, $this->username, $this->password, $this->database);
