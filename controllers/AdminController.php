@@ -155,7 +155,6 @@ class AdminController {
         $admin = new AdminDAO();
 
         $resultado = $admin->updateConteudo($conexao, $conteudo);
-        echo $conteudo->getDescricao();
 
         if($resultado) {
             header('Location: ../view/editar_conteudo.php?id='.$conteudo->getId().'&msg="Conteúdo alterado com sucesso!"');
