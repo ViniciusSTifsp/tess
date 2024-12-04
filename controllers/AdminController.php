@@ -120,12 +120,48 @@ class AdminController {
                           '<td>'.$nivel['nivel'].'</td>'.
                           '<td>'.$conteudo->getDia().'</td>'.
                           '<td>'.$conteudo->getSemana().'</td>'.
-                          '<td><a href="../view/editar.php?id='.$conteudo->getId().'"> <i class="lni lni-pencil"></i> </a></td>'.
+                          '<td><a href="../view/editar_conteudo.php?id='.$conteudo->getId().'"> <i class="lni lni-pencil"></i> </a></td>'.
                       '</tr>';                   
             }
 
             echo '</table>';
 
+        }
+
+    }
+
+    
+    public function carregaConteudo($id) {
+
+        $conexao = new Connection();
+        $admin = new AdminDAO();
+
+        $resultado = $admin->getConteudo($conexao, $id);
+
+        $dado = $resultado->fetch_assoc();
+
+        $conteudo = new Conteudo ();
+        $conteudo->setId($dado['id']);
+        $conteudo->setTitulo($dado['titulo']);
+        $conteudo->setDescricao($dado['descricao']);
+
+        return $conteudo;
+
+    }
+
+    public function editaConteudo(Conteudo $conteudo) {
+
+        $conexao = new Connection();
+        $admin = new AdminDAO();
+
+        $resultado = $admin->updateConteudo($conexao, $conteudo);
+        echo $conteudo->getDescricao();
+
+        if($resultado) {
+            header('Location: ../view/editar_conteudo.php?id='.$conteudo->getId().'&msg="Conteúdo alterado com sucesso!"');
+        }
+        else {
+            header('Location: ../view/editar_conteudo.php?id='.$conteudo->getId().'&msg="Falha ao alterar o conteúdo!"');
         }
 
     }

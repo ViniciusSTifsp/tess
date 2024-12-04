@@ -1,3 +1,12 @@
+<?php
+    if(isset($_SESSION['admin'])) {
+        header('Location: ../view/admin.php');
+    }
+    elseif(isset($_SESSION['email'])) {
+        header('Location: ../view/home.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -5,7 +14,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TESS</title>
+    <title>Cadastro</title>
     <link rel="stylesheet" href="../src/style/style2.css" />
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />

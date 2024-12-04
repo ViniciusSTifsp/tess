@@ -81,6 +81,7 @@ class UsuarioController {
         $usuario->setEmail($_SESSION['email']);
 
         $resultado = $usuarioDAO->verificaEmail($conexao, $usuario);
+        
 
         $dado = $resultado->fetch_assoc();
 
@@ -100,6 +101,7 @@ class UsuarioController {
         $resultado = $usuarioDAO->update($conexao, $usuario);
 
         if($resultado) {
+            $_SESSION['email'] = $email;
             header('Location: ../view/profile.php');
         }
         else {

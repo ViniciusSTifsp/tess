@@ -1,3 +1,12 @@
+<?php
+    if(isset($_SESSION['admin'])) {
+        header('Location: ../view/admin.php');
+    }
+    elseif(isset($_SESSION['email'])) {
+        header('Location: ../view/home.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -5,7 +14,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TESS</title>
+    <title>Login</title>
     <link rel="stylesheet" href="../src/style/style2.css" />
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -48,16 +57,7 @@
                         </div>
                         <div class="input-group mb-1">
                             <input type="password" class="form-control form-control-lg bg-light fs-6" name="senha" placeholder="Senha">
-                        </div>
-                        <div class="input-group mb-5 d-flex justify-content-between">
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="formCheck">
-                                <label for="formCheck" class="form-check-label text-secondary"><small>Lembre de mim</small></label>
-                            </div>
-                            <div class="forgot">
-                                <small><a href="#">Esqueceu a senha?</a></small>
-                            </div>
-                        </div>
+                        </div><br>
                         <div class="input-group mb-3">
                             <button class="btn btn-lg btn-primary w-100 fs-6 inputSubmit" style="background: #2E8098; border-color:#2E8098" type="submit" name="submit" value="Enviar">Login</button>
                         </div>

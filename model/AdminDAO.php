@@ -36,9 +36,9 @@ class AdminDAO {
         return mysqli_query($con->connection(), $query);
     }
 
-    public function updateConteudo(Connection $con, Conteudo $conteudo, Nivel $nivel) {
+    public function updateConteudo(Connection $con, Conteudo $conteudo) {
         $query = 'UPDATE 
-                     usuarios
+                     conteudo
                  SET
                     titulo = "'.$conteudo->getTitulo().'"'.
                     ',descricao = "'.$conteudo->getDescricao().'"'.

@@ -293,6 +293,9 @@ body {
     right: 0px; 
     bottom: 0;
 }
+#admin{
+    font-weight: bold;
+}
 
 /* Media Query para esconder a imagem em telas menores que 768px (celulares e tablets) */
 @media (max-width: 1080px) {

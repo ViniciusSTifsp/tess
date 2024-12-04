@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 18/11/2024 às 03:06
--- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.2.12
+-- Tempo de geração: 04-Dez-2024 às 02:13
+-- Versão do servidor: 10.4.24-MariaDB
+-- versão do PHP: 8.0.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,15 +18,14 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `tess_oficial`
+-- Banco de dados: `hostdeprojetos_tess`
 --
-CREATE DATABASE IF NOT EXISTS `hostdeprojetos_tess` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `hostdeprojetos_tess`;
-
+CREATE DATABASE IF NOT EXISTS `ifhostgru_tess` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `ifhostgru_tess`;
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `conteudo`
+-- Estrutura da tabela `conteudo`
 --
 
 CREATE TABLE `conteudo` (
@@ -37,20 +36,14 @@ CREATE TABLE `conteudo` (
   `titulo` varchar(500) NOT NULL,
   `descricao` varchar(10000) NOT NULL,
   `concluido` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- RELACIONAMENTOS PARA TABELAS `conteudo`:
---   `id_nivel`
---       `nivel` -> `id`
---
-
---
--- Despejando dados para a tabela `conteudo`
+-- Extraindo dados da tabela `conteudo`
 --
 
 INSERT INTO `conteudo` (`id`, `id_nivel`, `semana`, `dia`, `titulo`, `descricao`, `concluido`) VALUES
-(1, 19, 1, 1, 'Alfabeto, pronúncia básica e números de 1 a 20', 'O alfabeto em inglês é composto por 26 letras, que são divididas em maiusculas e minúsculas. As letras são: A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z. Elas formam a base de todas as palavras da língua inglesa e são fundamentais para a leitura e escrita.\r\nJá os números de 1 a 20 em inglês são:\r\nOne\r\nTwo\r\nThree\r\nFour\r\nFive\r\nSix\r\nSeven\r\nEight\r\nNine\r\nTen\r\nEleven\r\nTwelve\r\nThirteen\r\nFourteen\r\nFifteen\r\nSixteen\r\nSeventeen\r\nEighteen\r\nNineteen\r\nTwenty\r\nEsses números são essenciais para a contagem e a construção de frases que envolvem quantidades e medidas. Conhecê-los é um passo inicial para a compreensão básica do idioma.\r\n', 0),
+(1, 19, 1, 1, 'Alfabeto, pronúncia básica e números de 1 a 20', '                                                                                                O alfabeto em inglês é composto por 26 letras, que são divididas em maiúsculas e minúsculas. As letras são: A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z. Elas formam a base de todas as palavras da língua inglesa e são fundamentais para a leitura e escrita.\r\nJá os números de 1 a 20 em inglês são:\r\nOne\r\nTwo\r\nThree\r\nFour\r\nFive\r\nSix\r\nSeven\r\nEight\r\nNine\r\nTen\r\nEleven\r\nTwelve\r\nThirteen\r\nFourteen\r\nFifteen\r\nSixteen\r\nSeventeen\r\nEighteen\r\nNineteen\r\nTwenty\r\nEsses números são essenciais para a contagem e a construção de frases que envolvem quantidades e medidas. Conhecê-los é um passo inicial para a compreensão básica do idioma.\r\n                                                                                ', 0),
 (2, 19, 1, 2, 'Saudações, despedidas e apresentações (Hello, my name is..., How are you?)', 'No inglês, as saudações e despedidas são expressões fundamentais para iniciar e encerrar uma conversa. Algumas das saudações mais comuns incluem:\r\nHello (Olá)\r\nHi (Oi)\r\nGood morning (Bom dia)\r\nGood afternoon (Boa tarde)\r\nGood evening (Boa noite, ao chegar)\r\nPara se despedir, algumas expressões comuns são:\r\nGoodbye (Adeus/Tchau)\r\nBye (Tchau)\r\nSee you later (Até mais)\r\nGood night (Boa noite, ao sair)\r\nTake care (Cuide-se)\r\nPronomes pessoais são usados para indicar as pessoas que realizam uma ação ou são referidas em uma frase. Em inglês, eles são:\r\nI (eu)\r\nYou (você)\r\nHe (ele)\r\nShe (ela)\r\nIt (ele/ela para objetos e animais)\r\nWe (nós)\r\nYou (vocês)\r\nThey (eles/elas)\r\nO verbo \"to be\" significa \"ser\" ou \"estar\" e é um dos verbos mais importantes da língua inglesa. Na forma afirmativa, ele é conjugado da seguinte maneira:\r\nI am (eu sou/estou)\r\nYou are (você é/está)\r\nHe/She/It is (ele/ela é/está)\r\nWe are (nós somos/estamos)\r\nYou are (vocês são/estão)\r\nThey are (eles/elas são/estão)\r\nExemplos de frases com o verbo \"to be\" na afirmativa:\r\nI am a student (Eu sou um estudante).\r\nShe is happy (Ela está feliz).\r\nThey are friends (Eles são amigos).\r\nCom essas estruturas básicas, é possível começar a criar frases simples em inglês e interagir em situações cotidianas.\r\n\r\nEm inglês, a conjugação dos verbos no presente muda quando usamos os pronomes he (ele), she (ela) e it (ele/ela para objetos ou animais). A principal regra é adicionar a letra \"s\" ao final do verbo para essas formas na terceira pessoa do singular.\r\nRegras básicas para a conjugação no presente:\r\nVerbos regulares:\r\nPara a maioria dos verbos, basta adicionar \"s\" no final:\r\nHe likes pizza. (Ele gosta de pizza.)\r\nShe plays soccer. (Ela joga futebol.)\r\nIt works well. (Isso funciona bem.)\r\nVerbos que terminam em \"ch\", \"sh\", \"x\", \"o\", \"s\" ou \"z\":\r\nAdiciona-se \"es\":\r\nHe watches TV. (Ele assiste TV.)\r\nShe goes to school. (Ela vai para a escola.)\r\nVerbos que terminam em consoante + \"y\":\r\nTroca-se o \"y\" por \"ies\":\r\nHe studies English. (Ele estuda inglês.)\r\nShe carries the bag. (Ela carrega a bolsa.)\r\nExemplo com o verbo \"like\" (gostar):\r\nI like (Eu gosto)\r\nYou like (Você gosta)\r\nHe/She/It likes (Ele/Ela gosta)\r\nExemplo com o verbo \"go\" (ir):\r\nI go (Eu vou)\r\nYou go (Você vai)\r\nHe/She/It goes (Ele/Ela vai)\r\nEssa regra se aplica à maioria dos verbos no presente simples. É importante lembrar de adicionar o \"s\" ou \"es\" quando falamos de he, she ou it, pois essa é uma característica específica do presente na terceira pessoa do singular em inglês.', 0),
 (3, 19, 1, 3, 'Cores e objetos comuns (red, blue, book, pen)', 'O verbo \"to be\" (ser/estar) também pode ser usado nas formas negativa e interrogativa. Essas formas são essenciais para negar informações e fazer perguntas no inglês.\r\nVerbo \"to be\" na negativa:\r\nPara fazer a forma negativa, basta adicionar a palavra \"not\" após o verbo \"to be\". Veja as formas:\r\nI am not (eu não sou/estou)\r\nYou are not (você não é/está)\r\nHe/She/It is not (ele/ela não é/está)\r\nWe are not (nós não somos/estamos)\r\nYou are not (vocês não são/estão)\r\nThey are not (eles/elas não são/estão)\r\nA forma contraída também é muito usada no inglês falado:\r\nI’m not (I am not)\r\nYou aren’t (You are not)\r\nHe/She/It isn’t (He/She/It is not)\r\nWe aren’t (We are not)\r\nThey aren’t (They are not)\r\nExemplos:\r\nShe is not tired. (Ela não está cansada.)\r\nThey aren’t at home. (Eles não estão em casa.)\r\nVerbo \"to be\" na forma interrogativa:\r\nPara fazer perguntas com o verbo \"to be\", basta inverter a posição do sujeito e do verbo:\r\nAm I? (Eu sou/estou?)\r\nAre you? (Você é/está?)\r\nIs he/she/it? (Ele/ela é/está?)\r\nAre we? (Nós somos/estamos?)\r\nAre you? (Vocês são/estão?)\r\nAre they? (Eles/elas são/estão?)\r\nExemplos:\r\nIs she a teacher? (Ela é professora?)\r\nAre they happy? (Eles estão felizes?)\r\nCores e Objetos do Cotidiano:\r\nAs cores são palavras fundamentais no inglês e ajudam a descrever o mundo ao nosso redor. Algumas cores básicas são:\r\nRed (vermelho)\r\nBlue (azul)\r\nGreen (verde)\r\nYellow (amarelo)\r\nBlack (preto)\r\nWhite (branco)\r\nPink (rosa)\r\nPurple (roxo)\r\nOrange (laranja)\r\nBrown (marrom)\r\nObjetos do cotidiano são aqueles que usamos ou vemos com frequência em nosso dia a dia. Alguns exemplos:\r\nChair (cadeira)\r\nTable (mesa)\r\nBook (livro)\r\nPen (caneta)\r\nPhone (telefone)\r\nLaptop (notebook)\r\nBackpack (mochila)\r\nKeys (chaves)\r\n', 0),
 (4, 19, 1, 4, 'Verbo \"to be\" (I am, you are, he/she/it is) e frases simples com nomes', 'O verbo \"to be\" (ser/estar) é fundamental para descrever pessoas e objetos em inglês. Ele ajuda a fornecer informações sobre características físicas, qualidades e estados.\r\nUso do verbo \"to be\" para descrever pessoas:\r\nQuando descrevemos pessoas, o verbo \"to be\" é usado junto com adjetivos para falar sobre aparência física, personalidade e estados. Veja alguns exemplos:\r\nShe is tall. (Ela é alta.)\r\nHe is friendly. (Ele é amigável.)\r\nThey are tired. (Eles estão cansados.)\r\nI am happy. (Eu estou feliz.)\r\nEssas frases mostram como o verbo \"to be\" é utilizado para fornecer características ou estados das pessoas.\r\nUso do verbo \"to be\" para descrever objetos:\r\nO verbo \"to be\" também é útil para descrever objetos, falando sobre suas cores, tamanhos e outras características:\r\nThe car is red. (O carro é vermelho.)\r\nThis book is new. (Este livro é novo.)\r\nThe table is big. (A mesa é grande.)\r\nIt is old. (É velho.)\r\nEssas descrições ajudam a identificar e caracterizar objetos de forma clara.\r\nAdjetivos básicos:\r\nOs adjetivos são palavras que descrevem características e qualidades de pessoas, lugares ou coisas. Alguns adjetivos básicos e comuns em inglês são:\r\nBig (grande)\r\nSmall (pequeno)\r\nOld (velho)\r\nNew (novo)\r\nHappy (feliz)\r\nSad (triste)\r\nBeautiful (bonito/bonita)\r\nUgly (feio/feia)\r\nFast (rápido)\r\nSlow (lento)\r\n', 0),
@@ -153,8 +146,8 @@ INSERT INTO `conteudo` (`id`, `id_nivel`, `semana`, `dia`, `titulo`, `descricao`
 (213, 23, 4, 3, 'Vocabulário formal e informal para diferentes contextos.', 'Objetivo: Diferenciar o uso de vocabulário formal e informal para diferentes contextos.\r\n\r\nGramática: A prática deve incluir a identificação e o uso de registros formais e informais em situações apropriadas. Por exemplo, um discurso em uma conferência deve utilizar um registro mais formal, enquanto uma conversa entre amigos pode permitir um vocabulário mais casual.\r\n\r\nVocabulário: Os alunos devem aprender vocabulário formal, como “ascertain”, “commence” e “convey”, em contraste com termos informais, como “find out”, “start” e “say”. Essa prática é fundamental para a adequação no uso da língua em diferentes contextos.', 0),
 (214, 23, 4, 4, 'Idiomatic expressions and colloquialisms específicos de diferentes culturas', 'Objetivo: Explorar expressões idiomáticas e coloquialismos de diferentes culturas.\r\n\r\nGramática: Os alunos devem aprender a utilizar expressões idiomáticas e coloquialismos em diferentes contextos. Isso envolve compreender não apenas o significado literal, mas também o contexto cultural em que essas expressões são usadas.\r\n\r\nVocabulário: O foco deve ser em expressões idiomáticas específicas de diferentes culturas, como “kick the bucket” (morrer) no inglês americano, e “spill the beans” (revelar um segredo). O entendimento dessas expressões enriquece o vocabulário e facilita a comunicação em um contexto cultural mais amplo.', 0),
 (215, 23, 4, 5, 'Simulação de uma apresentação em conferência internacional', 'Objetivo: Preparar e realizar uma apresentação formal em uma conferência internacional.\r\n\r\nGramática: A prática deve incluir o uso da linguagem formal e persuasiva. Os alunos devem se concentrar em construir frases que sejam claras e impactantes, utilizando estruturas gramaticais que transmitam confiança e autoridade.\r\n\r\nVocabulário: Os alunos devem aprender e praticar vocabulário específico para apresentações em conferências, como “objectives”, “findings”, “implications”, e “conclusion”. A utilização de um vocabulário apropriado e técnico é essencial para comunicar ideias de forma eficaz em um ambiente acadêmico ou profissional.', 0),
-(216, 24, 1, 1, 'Revisão de estruturas gramaticais avançadas (inversões, ênfases, condicional misto, voz passiva, gerúndios e infinitivos)', 'Aperfeiçoando o Inglês: Um Guia para Estruturas Gramaticais Avançadas\r\nIntrodução\r\nDominar o inglês vai além de conhecer as regras básicas. Para se expressar de forma fluente e precisa, é essencial entender as estruturas gramaticais avançadas. Neste guia, vamos explorar algumas dessas estruturas, como inversões, ênfases, condicionais mistos, voz passiva, gerúndios e infinitivos.\r\nInversões e Ênfase\r\nAs inversões e as ênfases são ferramentas poderosas para destacar ideias e tornar suas frases mais impactantes.\r\nInversões: Consistem em inverter a ordem tradicional de sujeito e verbo. São comuns após advérbios negativos (never, seldom) e expressões de lugar (here, there).\r\nNever have I seen such a beautiful sunset. (Nunca vi um pôr do sol tão bonito.)\r\nÊnfase: Pode ser obtida através de:\r\nCleft sentences: Dividindo a frase para destacar um elemento.\r\nIt was John who broke the window. (Foi João quem quebrou a janela.)\r\nAdjetivos intensificadores: Utilizando adjetivos como \"very\", \"extremely\".\r\nThe film was absolutely fantastic. (O filme foi absolutamente fantástico.)\r\nCondicional Misto\r\nA condicional mista combina elementos do passado e do presente/futuro.\r\nEstrutura: If + past perfect + would + verbo no infinitivo\r\nExemplo: If I had studied harder, I would speak English fluently now. (Se eu tivesse estudado mais, eu falaria inglês fluentemente agora.)\r\nVoz Passiva\r\nA voz passiva enfatiza a ação em vez do agente.\r\nEstrutura: Sujeito + verbo to be + particípio passado + (by + agente)\r\nExemplo: The book was written by John. (O livro foi escrito por João.)\r\nGerúndio e Infinitivo\r\nO gerúndio (-ing) e o infinitivo (to + verbo) têm diferentes funções:\r\nGerúndio: Expressa ações contínuas, como sujeito ou objeto de uma frase.\r\nSwimming is my favorite sport. (Nadar é meu esporte favorito.)\r\nInfinitivo: Expressa finalidade, possibilidade, ou após certos verbos.\r\nI want to learn Spanish. (Eu quero aprender espanhol.)', 0),
-(217, 24, 1, 2, 'Vocabulário relacionado a temas altamente especializados (inteligência artificial, biotecnologia, política internacional)', 'Objetivo: Aprender e dominar o vocabulário técnico em áreas como inteligência artificial, biotecnologia e política internacional.\r\n\r\nGramática: Neste dia, o foco é no vocabulário específico para áreas de conhecimento. Os alunos devem aprender a identificar e usar termos técnicos que são frequentemente empregados em contextos especializados. Isso envolve a análise de textos acadêmicos, artigos e relatórios, onde esses termos aparecem em uso real. O conhecimento gramatical relacionado a como usar esses termos em diferentes tempos verbais e construções de frases é igualmente importante.\r\n\r\nVocabulário: O estudo deve incluir a assimilação de termos técnicos e jargões associados a cada uma das áreas mencionadas. Por exemplo:\r\n\r\nInteligência Artificial: \"machine learning\", \"neural networks\", \"algorithms\".\r\nBiotecnologia: \"genetic engineering\", \"CRISPR\", \"biopharmaceuticals\".\r\nPolítica Internacional: \"diplomacy\", \"sanctions\", \"sovereignty\".\r\nA prática pode incluir exercícios de leitura e escrita, onde os alunos são incentivados a utilizar esses termos em frases e discussões, reforçando sua compreensão e capacidade de uso.', 0),
+(216, 24, 1, 1, 'Revisão de estruturas gramaticais avançadas (inversões, ênfases, condicional misto, voz passiva, gerúndios e infinitivos)', 'Aperfeiçoando o Inglês: Um Guia para Estruturas Gramaticais Avançadas\r\nIntrodução\r\nDominar o inglês vai além de conhecer as regras básicas. Para se expressar de forma fluente e precisa, é essencial entender as estruturas gramaticais avançadas. Neste guia, vamos explorar algumas dessas estruturas, como inversões, ênfases, condicionais mistos, voz passiva, gerúndios e infinitivos.\r\nInversões e Ênfase\r\nAs inversões e as ênfases são ferramentas poderosas para destacar ideias e tornar suas frases mais impactantes.\r\nInversões: Consistem em inverter a ordem tradicional de sujeito e verbo. São comuns após advérbios negativos (never, seldom) e expressões de lugar (here, there).\r\nNever have I seen such a beautiful sunset. (Nunca vi um pôr do sol tão bonito.)\r\nÊnfase: Pode ser obtida através de:\r\nCleft sentences: Dividindo a frase para destacar um elemento.\r\nIt was John who broke the window. (Foi João quem quebrou a janela.)\r\nAdjetivos intensificadores: Utilizando adjetivos como \"very\", \"extremely\".\r\nThe film was absolutely fantastic. (O filme foi absolutamente fantástico.)\r\nCondicional Misto\r\nA condicional mista combina elementos do passado e do presente/futuro.\r\nEstrutura: If + past perfect + would + verbo no infinitivo\r\nExemplo: If I had studied harder, I would speak English fluently now. (Se eu tivesse estudado mais, eu falaria inglês fluentemente agora.)\r\nVoz Passiva\r\nA voz passiva enfatiza a ação em vez do agente.\r\nEstrutura: Sujeito + verbo to be + particípio passado + (by + agente)\r\nExemplo: The book was written by John. (O livro foi escrito por João.)\r\nGerúndio e Infinitivo\r\nO gerúndio (-ing) e o infinitivo (to + verbo) têm diferentes funções:\r\nGerúndio: Expressa ações contínuas, como sujeito ou objeto de uma frase.\r\nSwimming is my favorite sport. (Nadar é meu esporte favorito.)\r\nInfinitivo: Expressa finalidade, possibilidade, ou após certos verbos.\r\nI want to learn Spanish. (Eu quero aprender espanhol.)', 1),
+(217, 24, 1, 2, 'Vocabulário relacionado a temas altamente especializados (inteligência artificial, biotecnologia, política internacional)', 'Objetivo: Aprender e dominar o vocabulário técnico em áreas como inteligência artificial, biotecnologia e política internacional.\r\n\r\nGramática: Neste dia, o foco é no vocabulário específico para áreas de conhecimento. Os alunos devem aprender a identificar e usar termos técnicos que são frequentemente empregados em contextos especializados. Isso envolve a análise de textos acadêmicos, artigos e relatórios, onde esses termos aparecem em uso real. O conhecimento gramatical relacionado a como usar esses termos em diferentes tempos verbais e construções de frases é igualmente importante.\r\n\r\nVocabulário: O estudo deve incluir a assimilação de termos técnicos e jargões associados a cada uma das áreas mencionadas. Por exemplo:\r\n\r\nInteligência Artificial: \"machine learning\", \"neural networks\", \"algorithms\".\r\nBiotecnologia: \"genetic engineering\", \"CRISPR\", \"biopharmaceuticals\".\r\nPolítica Internacional: \"diplomacy\", \"sanctions\", \"sovereignty\".\r\nA prática pode incluir exercícios de leitura e escrita, onde os alunos são incentivados a utilizar esses termos em frases e discussões, reforçando sua compreensão e capacidade de uso.', 1),
 (218, 24, 1, 3, 'Expressões idiomáticas e coloquialismos avançados, incluindo variações regionais', 'Objetivo: Explorar e dominar expressões idiomáticas e coloquialismos avançados, com ênfase em variações regionais.\r\n\r\nGramática: A prática do uso de expressões idiomáticas em diferentes contextos e registros é crucial. Os alunos devem aprender a aplicar essas expressões de forma apropriada, reconhecendo que o uso pode variar dependendo do contexto formal ou informal. Por exemplo, uma expressão pode ser mais adequada em uma conversa casual do que em um ambiente de negócios.\r\n\r\nVocabulário: O foco deve ser em expressões idiomáticas mais complexas e suas nuances de significado. Aqui estão alguns exemplos:\r\n\r\nExpressões comuns: \"Break the ice\" (iniciar uma conversa em uma situação social), \"Bite the bullet\" (enfrentar uma situação difícil).\r\nVariações regionais:\r\nNo inglês britânico, uma expressão como \"Bob\'s your uncle\" é usada para indicar que algo é fácil de fazer.\r\nNo inglês americano, \"Throw in the towel\" significa desistir ou admitir a derrota.\r\nOs alunos devem praticar a utilização dessas expressões em diálogos simulados e escritos, explorando como o significado pode mudar conforme o contexto. Isso também inclui discutir a origem de algumas expressões, o que ajuda a entender melhor seu uso cultural.', 0);
 INSERT INTO `conteudo` (`id`, `id_nivel`, `semana`, `dia`, `titulo`, `descricao`, `concluido`) VALUES
 (219, 24, 1, 4, 'Modal verbs em contextos hipotéticos e dedutivos, incluindo modal verbs perfeitos', 'Verbos Modais em Contextos Hipotéticos e Dedutivos: Um Guia Completo\r\nVerbos modais são palavras que acompanham o verbo principal de uma frase, expressando ideias como possibilidade, capacidade, obrigação, permissão, etc. Em contextos hipotéticos e dedutivos, os verbos modais desempenham um papel fundamental, permitindo que expressemos suposições, incertezas e conclusões lógicas.\r\nContextos Hipotéticos\r\nEm contextos hipotéticos, os verbos modais nos ajudam a falar sobre situações que podem ou não acontecer, ou sobre como as coisas seriam diferentes se algo fosse diferente. Os verbos modais mais comuns nesses contextos são: could, might, would, should.\r\nCould: Expressa possibilidade ou habilidade no passado ou em situações hipotéticas:\r\nIf I had more time, I could learn to play the piano. (Se eu tivesse mais tempo, eu poderia aprender a tocar piano.)\r\nMight: Expressa possibilidade no presente ou futuro, com um grau de incerteza maior que \"could\":\r\nIt might rain tomorrow. (Pode chover amanhã.)\r\nWould: Expressa uma ação hipotética no passado ou futuro, frequentemente usada em condicional:\r\nIf I were you, I would buy that car. (Se eu fosse você, eu compraria aquele carro.)\r\nShould: Expressa uma obrigação ou conselho, especialmente em situações hipotéticas:\r\nYou should study harder if you want to pass the exam. (Você deveria estudar mais se quiser passar no exame.)\r\nContextos Dedutivos\r\nEm contextos dedutivos, os verbos modais nos permitem fazer inferências ou tirar conclusões com base em evidências. Os verbos modais mais comuns nesses contextos são: must, can\'t, should.\r\nMust: Expressa uma forte probabilidade ou certeza:\r\nShe must be tired; she\'s been working all day. (Ela deve estar cansada; ela está trabalhando o dia todo.)\r\nCan\'t: Expressa uma forte improbabilidade ou impossibilidade:\r\nHe can\'t be at home; I just called him. (Ele não pode estar em casa; acabei de ligar para ele.)\r\nShould: Expressa uma expectativa ou conclusão lógica:\r\nHe left work early; he should be home by now. (Ele saiu do trabalho cedo; ele já deve estar em casa.)\r\nVerbos Modais Perfeitos\r\nOs verbos modais perfeitos (modal + have + particípio passado) são usados para expressar situações hipotéticas ou dedutivas no passado.\r\nCould have: Expressa uma possibilidade que não se realizou no passado:\r\nShe could have won the race, but she fell. (Ela poderia ter ganhado a corrida, mas ela caiu.)\r\nMight have: Expressa uma possibilidade menor que \"could have\":\r\nHe might have forgotten your birthday. (Ele pode ter esquecido seu aniversário.)\r\nShould have: Expressa uma ação que deveria ter sido feita no passado, mas não foi:\r\nYou should have studied harder. (Você deveria ter estudado mais.)\r\nMust have: Expressa uma forte probabilidade de que algo tenha acontecido no passado:\r\nHe must have left early; his car is not here. (Ele deve ter saído cedo; seu carro não está aqui.)\r\nCan\'t have: Expressa uma forte improbabilidade de que algo tenha acontecido no passado:\r\nShe can\'t have finished the report already; she only started an hour ago. (Ela não pode ter terminado o relatório ainda; ela começou há apenas uma hora.)', 0),
@@ -178,20 +171,16 @@ INSERT INTO `conteudo` (`id`, `id_nivel`, `semana`, `dia`, `titulo`, `descricao`
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `nivel`
+-- Estrutura da tabela `nivel`
 --
 
 CREATE TABLE `nivel` (
   `id` int(11) NOT NULL,
   `nivel` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- RELACIONAMENTOS PARA TABELAS `nivel`:
---
-
---
--- Despejando dados para a tabela `nivel`
+-- Extraindo dados da tabela `nivel`
 --
 
 INSERT INTO `nivel` (`id`, `nivel`) VALUES
@@ -205,20 +194,16 @@ INSERT INTO `nivel` (`id`, `nivel`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `perguntas`
+-- Estrutura da tabela `perguntas`
 --
 
 CREATE TABLE `perguntas` (
   `id` int(11) NOT NULL,
   `pergunta` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- RELACIONAMENTOS PARA TABELAS `perguntas`:
---
-
---
--- Despejando dados para a tabela `perguntas`
+-- Extraindo dados da tabela `perguntas`
 --
 
 INSERT INTO `perguntas` (`id`, `pergunta`) VALUES
@@ -251,7 +236,7 @@ INSERT INTO `perguntas` (`id`, `pergunta`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `quiz`
+-- Estrutura da tabela `quiz`
 --
 
 CREATE TABLE `quiz` (
@@ -259,16 +244,10 @@ CREATE TABLE `quiz` (
   `id_usuario` int(11) NOT NULL,
   `resposta_correta` int(11) NOT NULL,
   `completado` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- RELACIONAMENTOS PARA TABELAS `quiz`:
---   `id_usuario`
---       `usuarios` -> `id`
---
-
---
--- Despejando dados para a tabela `quiz`
+-- Extraindo dados da tabela `quiz`
 --
 
 INSERT INTO `quiz` (`id`, `id_usuario`, `resposta_correta`, `completado`) VALUES
@@ -278,12 +257,13 @@ INSERT INTO `quiz` (`id`, `id_usuario`, `resposta_correta`, `completado`) VALUES
 (20, 32, 10, 1),
 (21, 33, 8, 1),
 (22, 35, 12, 1),
-(23, 38, 12, 1);
+(23, 38, 12, 1),
+(24, 39, 22, 1);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `respostas`
+-- Estrutura da tabela `respostas`
 --
 
 CREATE TABLE `respostas` (
@@ -291,18 +271,10 @@ CREATE TABLE `respostas` (
   `id_pergunta` int(11) NOT NULL,
   `resposta` varchar(250) NOT NULL,
   `correta` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- RELACIONAMENTOS PARA TABELAS `respostas`:
---   `id_pergunta`
---       `perguntas` -> `id`
---   `id_pergunta`
---       `perguntas` -> `id`
---
-
---
--- Despejando dados para a tabela `respostas`
+-- Extraindo dados da tabela `respostas`
 --
 
 INSERT INTO `respostas` (`id`, `id_pergunta`, `resposta`, `correta`) VALUES
@@ -385,7 +357,7 @@ INSERT INTO `respostas` (`id`, `id_pergunta`, `resposta`, `correta`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuarios`
+-- Estrutura da tabela `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -397,46 +369,35 @@ CREATE TABLE `usuarios` (
   `login` tinyint(1) NOT NULL,
   `sobrenome` varchar(255) NOT NULL,
   `telefone` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- RELACIONAMENTOS PARA TABELAS `usuarios`:
---
-
---
--- Despejando dados para a tabela `usuarios`
+-- Extraindo dados da tabela `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `admin`, `login`, `sobrenome`, `telefone`) VALUES
-(29, 'Vini', 'a@a', '$2y$10$25Gi4uOzHt/f3wRnoEoynO/tLGmcDUAkb.BT6erelmLelYSg0rmyu', 0, 1, 'Tavares', '(11) 2466-4816'),
-(30, 'lidia', 'b@b', '$2y$10$cu2zTiqja3AesnuAotDQV.Tue2ufWzxrZO6CKBwSTly8lbXl2/G8.', 1, 0, '', ''),
+(29, 'Vinicius', 'vinicius@gmail.com', '$2y$10$4LF0HpMEw6BX.VzLwOcAfe/OhHgEjntQpyvDE38/MNDl9TWzJT62e', 0, 1, 'Tavares', '(11) 2466-4816'),
+(30, 'Lidia', 'lidiabravo@ifsp.edu.br', '$2y$10$7mnKdrDbEexpPYkANFAylu9fU.tjMrobJTpnyvoR1H9u2baKlaSsW', 1, 0, 'Bravo', ''),
 (31, 'lucas', 'c@c', '$2y$10$9PbIKriY1HnRt.OWFe.BE.oH1lOri/u7HzuPMGjkfQTZkMMJIOsVO', 0, 1, '', ''),
 (32, 'teste', 'd@d', '$2y$10$ycpotx9sCQWFPPx8GWur6.OU.93eKNNhU82OUSbEJmrt.r6sfOh4.', 0, 1, '', ''),
 (33, 'Lucas', 'lucas@email.com', '$2y$10$kLmqKXke5v8mPJ4cdPsGAeDXjTitEoCFRT.z3mDzkax7QpLL1SV0C', 0, 1, '', ''),
 (35, 'Igor', 'lucaszeno_@hotmail.com', '$2y$10$d9Vf9IgHwjpnia0zm4Cc5urra7XNimMVCyVzOYwioYestOGA85RLq', 0, 1, '', ''),
-(38, 'Pedro', 'pedu@pedu', '$2y$10$HQr2XopSOI8Nbokmjybk4OiQkfGJb5NLgGxacvWYG30ubWBX4wJYq', 0, 1, 'Henrique', '(11) 2466-4816');
+(38, 'Pedro', 'pedu@pedu', '$2y$10$HQr2XopSOI8Nbokmjybk4OiQkfGJb5NLgGxacvWYG30ubWBX4wJYq', 0, 1, 'Henrique', '(11) 2466-4816'),
+(39, 'manuelle', 'manuelle@m', '$2y$10$Ui.gSA4iHWaIDBPb.u.JG.mwfpgRrUiFBadRJfsGscW/dJzxrIiLu', 1, 1, 'moraes', '(11) 0000-0001');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuario_nivel`
+-- Estrutura da tabela `usuario_nivel`
 --
 
 CREATE TABLE `usuario_nivel` (
   `id_nivel` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- RELACIONAMENTOS PARA TABELAS `usuario_nivel`:
---   `id_nivel`
---       `nivel` -> `id`
---   `id_usuario`
---       `usuarios` -> `id`
---
-
---
--- Despejando dados para a tabela `usuario_nivel`
+-- Extraindo dados da tabela `usuario_nivel`
 --
 
 INSERT INTO `usuario_nivel` (`id_nivel`, `id_usuario`) VALUES
@@ -445,60 +406,61 @@ INSERT INTO `usuario_nivel` (`id_nivel`, `id_usuario`) VALUES
 (21, 32),
 (20, 33),
 (21, 35),
-(21, 38);
+(21, 38),
+(24, 39);
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices de tabela `conteudo`
+-- Índices para tabela `conteudo`
 --
 ALTER TABLE `conteudo`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_nivel` (`id_nivel`);
 
 --
--- Índices de tabela `nivel`
+-- Índices para tabela `nivel`
 --
 ALTER TABLE `nivel`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `perguntas`
+-- Índices para tabela `perguntas`
 --
 ALTER TABLE `perguntas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `quiz`
+-- Índices para tabela `quiz`
 --
 ALTER TABLE `quiz`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_quiz_usuario` (`id_usuario`);
 
 --
--- Índices de tabela `respostas`
+-- Índices para tabela `respostas`
 --
 ALTER TABLE `respostas`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_pergunta` (`id_pergunta`);
 
 --
--- Índices de tabela `usuarios`
+-- Índices para tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `usuario_nivel`
+-- Índices para tabela `usuario_nivel`
 --
 ALTER TABLE `usuario_nivel`
   ADD KEY `fk_id_usuario` (`id_usuario`),
   ADD KEY `fk_id_nivel` (`id_nivel`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
@@ -523,7 +485,7 @@ ALTER TABLE `perguntas`
 -- AUTO_INCREMENT de tabela `quiz`
 --
 ALTER TABLE `quiz`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de tabela `respostas`
@@ -535,33 +497,33 @@ ALTER TABLE `respostas`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
--- Restrições para tabelas despejadas
+-- Restrições para despejos de tabelas
 --
 
 --
--- Restrições para tabelas `conteudo`
+-- Limitadores para a tabela `conteudo`
 --
 ALTER TABLE `conteudo`
   ADD CONSTRAINT `conteudo_ibfk_1` FOREIGN KEY (`id_nivel`) REFERENCES `nivel` (`id`);
 
 --
--- Restrições para tabelas `quiz`
+-- Limitadores para a tabela `quiz`
 --
 ALTER TABLE `quiz`
   ADD CONSTRAINT `fk_quiz_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`);
 
 --
--- Restrições para tabelas `respostas`
+-- Limitadores para a tabela `respostas`
 --
 ALTER TABLE `respostas`
   ADD CONSTRAINT `fk_pergunta` FOREIGN KEY (`id_pergunta`) REFERENCES `perguntas` (`id`),
   ADD CONSTRAINT `id_pergunta` FOREIGN KEY (`id_pergunta`) REFERENCES `perguntas` (`id`);
 
 --
--- Restrições para tabelas `usuario_nivel`
+-- Limitadores para a tabela `usuario_nivel`
 --
 ALTER TABLE `usuario_nivel`
   ADD CONSTRAINT `fk_id_nivel` FOREIGN KEY (`id_nivel`) REFERENCES `nivel` (`id`),

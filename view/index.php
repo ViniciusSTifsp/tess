@@ -35,8 +35,19 @@
                 </ul>
             </nav>
             <div class="header-icons">
-                <i class="bx bx-user"><a href="../view/cadastro.php" target="_blank">Cadastre-se</a></i>
-                <i class="bx bxs-log-in"><a href="../view/login.php" target="_blank">Login</a></i>
+                <?php
+                    session_start(); 
+                    if(isset($_SESSION['admin'])) {
+                        echo '<i class="bx bx-user"><a href="../view/admin.php">'.$_SESSION['nome'].'</a></i>';
+                    }
+                    elseif(isset($_SESSION['email'])) {
+                        echo '<i class="bx bx-user"><a href="../view/home.php">'.$_SESSION['nome'].'</a></i>';
+                    }
+                    else {
+                        echo '<i class="bx bx-user"><a href="../view/cadastro.php" target="_blank">Cadastre-se</a></i>';
+                        echo '<i class="bx bxs-log-in"><a href="../view/login.php" target="_blank">Login</a></i>';
+                    }
+                ?>
                 <div class="bx bx-menu" id="menu-icon"></div>
             </div>
         </header>
@@ -68,7 +79,7 @@
                 </div>
                 <div class="container-texto">
                     <h4>Gramática</h4>
-                    <p>Aprenda as regras da língua</p>
+                    <p>Aprenda as regras da língua inglesa</p>
                 </div>
             </div>
 
@@ -113,12 +124,12 @@
             <div class="trilhas-conteudo">
                 <div class="caixa2">
                     <img src="../src/images/pipoca.png" alt="" />
-                    <h3>Aprendizado com Jogos</h3>
+                    <h3>Aprendizado com Filmes</h3>
                 </div>
 
                 <div class="caixa2">
                     <img src="../src/images/karaoke.png" alt="" />
-                    <h3>Aprendizado com Jogos</h3>
+                    <h3>Aprendizado com Música</h3>
                 </div>
 
                 <div class="caixa2">
@@ -128,7 +139,7 @@
 
                 <div class="caixa2">
                     <img src="../src/images/publicidade.png" alt="" />
-                    <h3>Aprendizado com Jogos</h3>
+                    <h3>Aprendizado com Podcast</h3>
                 </div>
             </div>
         </section>
@@ -191,8 +202,8 @@
             <div class="contato-principal">
                 <div class="contato-conteudo">
                     <img src="../src/images/logo mapa 3 transparente.png" alt="" />
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Instagram</a></li>
+                    <li><a href="mailto:tess.projeto@gmail.com">tess.projeto@gmail.com</a></li>
+                    <li><a href="https://www.instagram.com/tess.projeto/profilecard/?igsh=MTE1ZGV6Ym5wcjB5Zw==">Instagram</a></li>
                 </div>
 
                 <div class="contato-conteudo">
@@ -203,9 +214,8 @@
                 </div>
 
                 <div class="contato-conteudo">
-                    <li><a href="#">Perfil</a></li>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Cadastre-se</a></li>
+                    <li><a href="login.php" target="_blank">Login</a></li>
+                    <li><a href="cadastro.php" target="_blank">Cadastre-se</a></li>
                 </div>
             </div>
         </section>

@@ -39,6 +39,7 @@ header {
   padding: 23px 13%;
   transition: all 0.4s ease;
 }
+
 .logo img {
   width: 60px;
   height: auto;
@@ -47,6 +48,11 @@ header {
 
 .navbar {
   display: flex;
+  list-style-type: none;
+}
+
+.navbar.active {
+  display: block;
 }
 
 .navbar a {
@@ -76,11 +82,11 @@ header {
 }
 
 #menu-icon {
-  font-size: 34px;
-  color: var(--text-color);
-  z-index: 10001;
+  display: block;
   cursor: pointer;
-  display: none;
+  color: var(--text-color);
+  font-size: 34px;
+  margin-right: 10px;
 }
 
 section {
@@ -98,12 +104,10 @@ section {
   gap: 1rem;
   align-items: center;
   background: rgb(146, 230, 231);
-  background: linear-gradient(
-    90deg,
-    rgba(146, 230, 231, 0.20220588235294112) 0%,
-    rgba(164, 230, 255, 0.1966036414565826) 50%,
-    rgba(173, 213, 240, 0.20220588235294112) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(146, 230, 231, 0.20220588235294112) 0%,
+      rgba(164, 230, 255, 0.1966036414565826) 50%,
+      rgba(173, 213, 240, 0.20220588235294112) 100%);
 }
 
 .home-img img {
@@ -308,12 +312,10 @@ header.sticky {
   background-size: cover;
   background-position: center;
   background: rgb(146, 230, 231);
-  background: linear-gradient(
-    90deg,
-    rgba(146, 230, 231, 0.20220588235294112) 0%,
-    rgba(164, 230, 255, 0.1966036414565826) 50%,
-    rgba(173, 213, 240, 0.20220588235294112) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(146, 230, 231, 0.20220588235294112) 0%,
+      rgba(164, 230, 255, 0.1966036414565826) 50%,
+      rgba(173, 213, 240, 0.20220588235294112) 100%);
 }
 
 .cursos-conteudo {
@@ -384,12 +386,10 @@ header.sticky {
   gap: 2rem;
   align-items: center;
   background: rgb(146, 230, 231);
-  background: linear-gradient(
-    90deg,
-    rgba(146, 230, 231, 0.20220588235294112) 0%,
-    rgba(164, 230, 255, 0.1966036414565826) 50%,
-    rgba(173, 213, 240, 0.20220588235294112) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(146, 230, 231, 0.20220588235294112) 0%,
+      rgba(164, 230, 255, 0.1966036414565826) 50%,
+      rgba(173, 213, 240, 0.20220588235294112) 100%);
 }
 
 .sobre-img img {
@@ -465,15 +465,18 @@ header.sticky {
   font-weight: 500;
   letter-spacing: 1px;
 }
+
 .ondas {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
 }
+
 .box-area {
   width: 930px;
 }
+
 .header-icons a {
   margin-left: 10px;
   margin-right: 15px;
@@ -482,70 +485,98 @@ header.sticky {
   transition: all 0.4s ease;
   text-decoration: none;
 }
+
 /* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
+  /* Menu oculto inicialmente em dispositivos móveis */
+  .navbar {
+    display: none;
+    width: 100%;
+    background-color: var(--background-color);
+    position: absolute;
+    top: 60px; /* Ajuste para que o menu não fique sobre o conteúdo */
+    left: 0;
+    padding: 15px 10px;
+    z-index: 100;
+    border-radius: 8px;
+  }
+
+  /* Menu exibido quando a classe "active" é adicionada */
+  .navbar.active {
+    display: block;
+  }
+
+  /* Estilo para o cabeçalho em dispositivos móveis */
   header {
     padding: 10px 5%;
   }
-  .navbar {
-    display: none;
-  }
-  #menu-icon {
-    display: block;
-  }
+
   .home {
     grid-template-columns: 1fr;
     text-align: center;
   }
+
   .home-img img {
     width: 80%;
     margin: 0 auto;
   }
-  .home-text h1 {
-    font-size: 2.5rem;
-  }
-  .container {
-    grid-template-columns: 1fr;
-    padding: 30px 5%;
-  }
-  .trilhas-conteudo,
-  .cursos-conteudo {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  .sobre {
-    grid-template-columns: 1fr;
-    padding: 30px 5%;
-  }
-  .sobre-img img {
-    width: 90%;
-    margin: 0 auto;
-  }
 }
+
+  /* Ajustar o tamanho das imagens e texto para facilitar a leitura */
+  .caixa img {
+    width: 100%;
+    height: auto;
+  }
+
+  .cursos-texto h5,
+  .cursos-texto h3 {
+    font-size: 1.4rem;
+  }
+
+  .caixa2 img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .caixa2 h3 {
+    font-size: 1.2rem;
+  }
+
+  /* Ajustar o ícone de login e cadastro */
+  .header-icons i {
+    font-size: 20px;
+  }
+
 
 /* Responsividade para tablets */
 @media (min-width: 769px) and (max-width: 1024px) {
   header {
     padding: 15px 8%;
   }
+
   .home {
     grid-template-columns: 1fr 1fr;
   }
+
   .home-img img {
     width: 70%;
   }
+
   .container {
     grid-template-columns: repeat(2, 1fr);
     padding: 50px 10%;
   }
+
   .trilhas-conteudo,
   .cursos-conteudo {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
+
   .sobre {
     grid-template-columns: 1fr 1fr;
   }
+
   .sobre-img img {
     width: 80%;
   }
