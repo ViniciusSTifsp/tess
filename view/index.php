@@ -48,7 +48,6 @@
                         echo '<i class="bx bxs-log-in"><a href="../view/login.php" target="_blank">Login</a></i>';
                     }
                 ?>
-                <div class="bx bx-menu" id="menu-icon"></div>
             </div>
         </header>
 
