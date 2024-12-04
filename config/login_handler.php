@@ -2,7 +2,7 @@
 
     require_once('../controllers/UsuarioController.php');
 
-    if(isset($_POST['submit']) && !empty($_REQUEST['email']) && !empty($_REQUEST['senha'])) {
+    if(isset($_REQUEST['submit']) && !empty($_REQUEST['email']) && !empty($_REQUEST['senha'])) {
         $email = $_REQUEST['email'];
         $senha = $_REQUEST['senha'];
 
